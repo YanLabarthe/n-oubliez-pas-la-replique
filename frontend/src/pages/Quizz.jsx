@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { randomWord, cryptedQuote } from "@services/cryptedQuote.js";
+import BatFace from "@components/BatFace";
+import batFaceData from "@assets/batFaceData.js";
 
 const api = [
   {
@@ -69,6 +71,12 @@ function QuizzFindCryptedWord() {
   // Score du joueur
   const [score, setScore] = useState(0);
 
+  // Win streak du joueur
+  const [winStreak, setWinStreak] = useState(0);
+
+  // Lose streak du joueur
+  const [loseStreak, setLoseStreak] = useState(0);
+
   // Message suite à une réponse
   const [wonMessage, setWonMessage] = useState();
 
@@ -76,6 +84,9 @@ function QuizzFindCryptedWord() {
   const [quoteIndex, setQuoteIndex] = useState(
     Math.floor(Math.random() * api.length)
   );
+
+  // BatFace content si winStreak
+  const [batFace, setBatFace] = useState(batFaceData.neutral);
 
   // Mot à deviner
   const [wordToGuess, setWordToGuess] = useState(
@@ -92,15 +103,27 @@ function QuizzFindCryptedWord() {
 
       setAnswer("");
       setScore(score + 10);
+      if (winStreak === 2) {
+        setBatFace(batFaceData.happy);
+      }
+      setWinStreak(winStreak + 1);
+      setLoseStreak(0);
     } else {
       setWonMessage("you are a fuckin'loser");
       setAnswer("");
+      if (loseStreak === 2) {
+        setBatFace(batFaceData.angry);
+      }
+      setWinStreak(0);
+      setLoseStreak(loseStreak + 1);
     }
   };
 
   return (
     <>
+      <BatFace className="flex justify-center" face={batFace} />
       <h4>SCORE : {score}</h4>
+
       {/* On affiche la citation cryptée */}
       <div className="quote">
         {cryptedQuote(api[quoteIndex].content, wordToGuess)}
@@ -109,6 +132,9 @@ function QuizzFindCryptedWord() {
       <p>Randow word to guess : {wordToGuess}</p>
       {/* On affiche un message suite à l'envoi d'une réponse (bonne ou mauvaise) */}
       {wonMessage && <div className="won">{wonMessage}</div>}
+
+      <p>Lose streak counter : {loseStreak} </p>
+      <p>Win streak counter : {loseStreak} </p>
 
       <input
         type="text"
