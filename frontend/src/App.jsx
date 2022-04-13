@@ -1,16 +1,17 @@
-import QuizzFindCryptedWord from "@pages/Quizz";
+import Quizz from "@pages/Quizz";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "@pages/Home";
+import Scoreboard from "@pages/Scoreboard";
 
 function App() {
   return (
     <div className="App">
-      <QuizzFindCryptedWord />
-
-      <div className="flex justify-center">
-        <h1 className="font-bold text-2xl text-blue-900">
-          React and Tailwind with Vitejs!
-        </h1>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quizz" element={<Quizz />} />
+        <Route path="/scoreboard" element={<Scoreboard />} />
+      </Routes>
     </div>
   );
 }

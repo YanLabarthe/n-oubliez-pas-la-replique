@@ -64,7 +64,7 @@ const api = [
   },
 ];
 
-function QuizzFindCryptedWord() {
+function Quizz() {
   // Réponse du joueur
   const [answer, setAnswer] = useState("");
 
@@ -121,7 +121,7 @@ function QuizzFindCryptedWord() {
 
   return (
     <>
-      <BatFace className="flex justify-center" face={batFace} />
+      <BatFace className="flex justify-center mx-auto" face={batFace} />
       <h4>SCORE : {score}</h4>
 
       {/* On affiche la citation cryptée */}
@@ -134,7 +134,7 @@ function QuizzFindCryptedWord() {
       {wonMessage && <div className="won">{wonMessage}</div>}
 
       <p>Lose streak counter : {loseStreak} </p>
-      <p>Win streak counter : {loseStreak} </p>
+      <p>Win streak counter : {winStreak} </p>
 
       <input
         type="text"
@@ -150,4 +150,4 @@ function QuizzFindCryptedWord() {
   );
 }
 
-export default QuizzFindCryptedWord;
+export default Quizz;
