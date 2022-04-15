@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { randomWord, cryptedQuote } from "@services/cryptedQuote.js";
 import BatFace from "@components/BatFace";
 import batFaceData from "@assets/batFaceData.js";
+import Timer from "@components/Timer";
 
 const api = [
   {
@@ -65,6 +66,9 @@ const api = [
 ];
 
 function Quizz() {
+  // Lancer le timer
+  const [timerEnded, setTimerEnded] = useState(false);
+
   // Réponse du joueur
   const [answer, setAnswer] = useState("");
 
@@ -92,31 +96,37 @@ function Quizz() {
   const [wordToGuess, setWordToGuess] = useState(
     randomWord(api[quoteIndex].content)
   );
+
   // Fonction lancé suite au click sur bouton "SEND"
   const action = () => {
     if (answer.toLowerCase() === wordToGuess.toLowerCase()) {
       setWonMessage("well done");
 
-      const newQuoteIndex = Math.floor(Math.random() * api.length);
-      setQuoteIndex(newQuoteIndex);
-      setWordToGuess(randomWord(api[newQuoteIndex].content));
-
       setAnswer("");
       setScore(score + 10);
+
       if (winStreak === 2) {
         setBatFace(batFaceData.happy);
       }
+
       setWinStreak(winStreak + 1);
       setLoseStreak(0);
     } else {
       setWonMessage("you are a fuckin'loser");
       setAnswer("");
+
       if (loseStreak === 2) {
         setBatFace(batFaceData.angry);
       }
+
       setWinStreak(0);
       setLoseStreak(loseStreak + 1);
     }
+
+    const newQuoteIndex = Math.floor(Math.random() * api.length);
+    setQuoteIndex(newQuoteIndex);
+    setWordToGuess(randomWord(api[newQuoteIndex].content));
+    setTimerEnded(false);
   };
 
   return (
@@ -136,16 +146,25 @@ function Quizz() {
       <p>Lose streak counter : {loseStreak} </p>
       <p>Win streak counter : {winStreak} </p>
 
+      {!timerEnded && (
+        <h3>
+          <Timer duration={3} onFinished={() => setTimerEnded(true)} />
+        </h3>
+      )}
+
       <input
         type="text"
+        disabled={timerEnded}
         value={answer}
         placeholder="ta réponse"
         onChange={(e) => setAnswer(e.target.value)}
       />
 
-      <button type="submit" onClick={action}>
-        Send
-      </button>
+      {timerEnded && (
+        <button type="button" onClick={action}>
+          Suivant
+        </button>
+      )}
     </>
   );
 }
