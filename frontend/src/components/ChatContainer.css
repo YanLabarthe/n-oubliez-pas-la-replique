@@ -1,0 +1,7 @@
+body {
+  @apply bg-black text-black box-border;
+}
+
+.boite {
+  @apply container mx-auto border-amber-300 border border-amber-300;
+}

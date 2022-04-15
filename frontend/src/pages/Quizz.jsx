@@ -4,7 +4,7 @@ import BatFace from "@components/BatFace";
 import batFaceData from "@assets/batFaceData.js";
 import Timer from "@components/Timer";
 
-const api = [
+export const api = [
   {
     title: "film Si seulement...",
     content:

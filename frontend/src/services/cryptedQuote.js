@@ -36,11 +36,7 @@ export const cryptedQuote = (quote, cryptedWord) => {
   let cryptage = "_";
 
   for (let i = 1; i < cryptedWord.length; i++) {
-    if (cryptage[i - 1] === "_") {
-      cryptage += "-";
-    } else {
-      cryptage += "_";
-    }
+    cryptage += " _ ";
   }
 
   return quote.replace(cryptedWord, cryptage);
