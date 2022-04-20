@@ -1,23 +1,67 @@
 import { useState } from "react";
+import batFaceData from "@assets/batFaceData";
 import "./ChatContainer.css";
 import { cryptedQuote, randomWord } from "@services/cryptedQuote";
 import { api } from "@pages/Quizz";
 import img1 from "../assets/img/send.png";
-import ChatBubble from "./ChatBubble";
+import CryptedBubble from "./CryptedBubble";
+import BatFace from "./BatFace";
 
 export default function ChatContainer() {
+  // current quote index
   const [quoteIndex, setQuoteIndex] = useState(
     Math.floor(Math.random() * api.length)
   );
 
+  // current word to guess
   const [wordToGuess, setWordToGuess] = useState(
     randomWord(api[quoteIndex].content)
   );
 
-  const action = () => {
+  // score useState
+  const [score, setScore] = useState(0);
+
+  // userMessage and messageList
+  const [userMessage, setUserMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
+
+  // win&losestreack counter
+  const [winStreak, setWinStreak] = useState(0);
+  const [loseStreak, setLoseStreak] = useState(0);
+
+  // set's the batface
+  const [batFace, setBatFace] = useState(batFaceData.neutral);
+
+  const action = (event) => {
+    event.preventDefault();
+
+    let newBatMessage = "you are a fuckin'loser";
+
     const newQuoteIndex = Math.floor(Math.random() * api.length);
     setQuoteIndex(newQuoteIndex);
     setWordToGuess(randomWord(api[newQuoteIndex].content));
+
+    // Good answer
+    if (userMessage.toLowerCase() === wordToGuess.toLowerCase()) {
+      newBatMessage = "well done";
+      setScore(score + 10);
+      if (winStreak === 2) {
+        setBatFace(batFaceData.happy);
+      }
+
+      setWinStreak(winStreak + 1);
+      setLoseStreak(0);
+
+      // Wrong answer
+    } else {
+      if (loseStreak === 2) {
+        setBatFace(batFaceData.angry);
+      }
+      setWinStreak(0);
+      setLoseStreak(loseStreak + 1);
+    }
+    setMessageList([...messageList, userMessage, newBatMessage]);
+    setUserMessage("");
   };
 
   return (
@@ -26,11 +70,7 @@ export default function ChatContainer() {
       <div className="chat-header px-6 py-4 flex flex-row flex-none justify-between items-center shadow bg-amber-400">
         <div className="flex">
           <div className="w-12 h-12 mr-4 relative flex flex-shrink-0">
-            <img
-              className="shadow-md rounded-full w-full h-full object-cover bg-black"
-              src="https://i.ibb.co/VjpKVVM/bat-Neutre.png"
-              alt="batman bidon utilisé pour test mise en page"
-            />
+            <BatFace face={batFace} />
           </div>
           <div className="text-sm text-gray-900">
             <p className="font-bold">Batman</p>
@@ -66,11 +106,15 @@ export default function ChatContainer() {
         </div>
       </div>
       {/* ------- Body du Chat / là intègre les citations et les réponses ------- */}
+
       <div className="chat-body p-4 flex-1 overflow-y-scroll">
-        <ChatBubble
-          image="https://i.ibb.co/Y8zMsDK/bat-Perplexe.png"
+        <CryptedBubble
+          batFace={batFace}
           citationCryptee={cryptedQuote(api[quoteIndex].content, wordToGuess)}
         />
+        {messageList.map((mess) => (
+          <div>{mess}</div>
+        ))}
       </div>
 
       {/* ------- Footer du Chat / là où on tape sa réponse ------- */}
@@ -110,11 +154,16 @@ export default function ChatContainer() {
           </button>
           <div className="relative flex-grow">
             <label htmlFor="cryptedQuoteAnswer">
-              <input
-                className="rounded-full py-2 pl-3 pr-10 w-full border border-amber-800 focus:border-amber-300 bg-gray-300 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
-                type="text"
-                placeholder="Aa"
-              />
+              <form onSubmit={action}>
+                <input
+                  className="rounded-full py-2 pl-3 pr-10 w-full border border-amber-800 focus:border-amber-300 bg-gray-300 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
+                  type="text"
+                  placeholder="Aa"
+                  onChange={(e) => setUserMessage(e.target.value)}
+                  value={userMessage}
+                  onSubmit={action}
+                />
+              </form>
               <button
                 type="button"
                 onClick={action}
