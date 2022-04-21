@@ -1,5 +1,5 @@
 body {
-  @apply bg-black text-black box-border;
+  @apply bg-black text-white box-border;
 }
 
 .boite {

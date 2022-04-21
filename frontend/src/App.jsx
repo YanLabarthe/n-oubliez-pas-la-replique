@@ -1,4 +1,3 @@
-import ChatContainer from "@components/ChatContainer";
 import "@components/ChatContainer.css";
 // import QuizzFindCryptedWord from "@pages/Quizz";
 import "./App.css";
@@ -12,7 +11,6 @@ function App() {
     <>
       {/* <div className="App"> */}
       {/* <QuizzFindCryptedWord /> */}
-      <ChatContainer />
       {/* <div className="flex justify-center">
         <h1 className="font-bold text-2xl text-blue-900">
           React and Tailwind with Vitejs!
