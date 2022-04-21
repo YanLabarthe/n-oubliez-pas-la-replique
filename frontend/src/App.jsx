@@ -8,24 +8,13 @@ import Scoreboard from "@pages/Scoreboard";
 
 function App() {
   return (
-    <>
-      {/* <div className="App"> */}
-      {/* <QuizzFindCryptedWord /> */}
-      {/* <div className="flex justify-center">
-        <h1 className="font-bold text-2xl text-blue-900">
-          React and Tailwind with Vitejs!
-        </h1>
-      </div>
-    </div> */}
-
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/quizz" element={<Quizz />} />
-          <Route path="/scoreboard" element={<Scoreboard />} />
-        </Routes>
-      </div>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quizz" element={<Quizz />} />
+        <Route path="/scoreboard" element={<Scoreboard />} />
+      </Routes>
+    </div>
   );
 }
 
