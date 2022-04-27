@@ -2,7 +2,7 @@ import React from "react";
 import "./Scoreboard.css";
 import { Link } from "react-router-dom";
 
-function Scoreboard() {
+function Scoreboard({ name, score }) {
   return (
     <>
       <link
@@ -25,8 +25,8 @@ function Scoreboard() {
           <div>4000 points</div>
           <div>oldDog</div>
           <div>3500 points</div>
-          <div>...</div>
-          <div>...</div>
+          <div>{name}</div>
+          <div>{score}</div>
           <div>...</div>
           <div>...</div>
           <div>...</div>

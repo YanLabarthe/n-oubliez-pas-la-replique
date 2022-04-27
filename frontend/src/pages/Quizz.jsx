@@ -1,74 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import batFaceData from "@assets/batFaceData";
 import { cryptedQuote, randomWord } from "@services/cryptedQuote";
 import img1 from "@assets/img/send.png";
-import CryptedBubble from "@components/CryptedBubble";
 import BatFace from "@components/BatFace";
 import BubbleAnswer from "@components/BubbleAnswer";
 import BatmanAnswer from "@components/BatmanAnswer";
 import Timer from "@components/Timer";
+import api from "@services/api";
+import { Link } from "react-router-dom";
 
-export default function ChatContainer() {
-  const api = [
-    {
-      title: "film Si seulement...",
-      content:
-        "On dit que dans un couple il y en a toujours un qui aime plus que l'autre, j'aurais préféré que ce ne soit pas moi.",
-    },
-    {
-      title: "film Titanic",
-      content: "Le coeur d'une femme est un océan de secrets.",
-    },
-    {
-      title: "film Le journal de Bridget Jones",
-      content:
-        "Pourquoi les personnes en couple demandent toujours aux célibataires comment vont les amours, est-ce que nous on leur saute dessus pour savoir s'ils baisent encore.",
-    },
-    {
-      title: "film Stella",
-      content: "Quand la misère sonne, l'amitié sort par la fenêtre",
-    },
-    {
-      title: "film La Ligne Verte",
-      content:
-        "Je suis fatigué patron, fatigué de devoir courir les routes et d'être seul comme un moineau sous la pluie. Fatigué d'avoir jamais un ami pour parler, pour me dire où on va, d'où on vient et pourquoi. Mais surtout je suis fatigué de voir les hommes se battre les uns les autres, je suis fatigué de toute la peine et la souffrance que je sens dans le monde.",
-    },
-    {
-      title: "film Lilo &amp; Stitch",
-      content:
-        '" ohana " signifie famille, famille signifie que personne ne doit être abandonné, ni oublié.',
-    },
-    {
-      title: "film Cendrillon",
-      content:
-        "Sois courageuse et sois gentille. Où il y a de la bonté, il y a du bien et quand il y a du bien, il y a de la magie",
-    },
-    {
-      title: "film La princesse et la grenouille",
-      content:
-        "Travailler dur est la seule manière d'avoir ce que tu veux dans ce monde.",
-    },
-    {
-      title: "film Into the wild",
-      content:
-        "Penser que la vie humaine ne peut être régie que par la raison, c'est nier la possibilité même de la vivre.",
-    },
-    {
-      title: "film Scarface",
-      content:
-        "Moi je n'ai confiance qu'en mon manche et ma parole... l'une est de fer et l'autre d'acier !",
-    },
-    {
-      title: "film Sur la route de Madison",
-      content:
-        "Je te veux pour toujours. Je veux t'aimer comme je t'aime en ce moment pour le reste de ma vie. Mais tu ne comprends pas? On perdrait tout si on partait ensemble. Je ne peux pas renier toute une vie pour en construire une nouvelle. Tout ce que je peux faire, c'est maintenir ces deux états d'esprit. Aide-moi ! Aide-moi à faire en sorte que mon amour pour toi ne disparaisse jamais !",
-    },
-    {
-      title: "film Le bon, la brute et le truand",
-      content:
-        "Tu vois, le monde se divise en deux catégories, ceux qui ont un pistolet chargé et ceux qui creusent. Toi, tu creuses.",
-    },
-  ];
+export default function ChatContainer({ alias, onFinished }) {
   // Lancer le timer
   const [timerEnded, setTimerEnded] = useState(false);
 
@@ -87,7 +28,13 @@ export default function ChatContainer() {
 
   // userMessage and messageList
   const [userMessage, setUserMessage] = useState("");
-  const [messageList, setMessageList] = useState([]);
+
+  const [messageList, setMessageList] = useState([
+    {
+      name: "batman",
+      message: cryptedQuote(api[quoteIndex].content, wordToGuess),
+    },
+  ]);
 
   // win&losestreack counter
   let winstreak = 0;
@@ -96,6 +43,17 @@ export default function ChatContainer() {
   // set's the batface
   const [batFace, setBatFace] = useState(batFaceData.neutral);
 
+  useEffect(() => {
+    if (timerEnded) {
+      onFinished(score);
+    }
+  }, [timerEnded]);
+
+  const onGameEnd = () => {
+    setTimerEnded(true);
+  };
+
+  // function launched after une response by the user is send
   const action = (event) => {
     event.preventDefault();
 
@@ -108,19 +66,23 @@ export default function ChatContainer() {
     const batmanResponse = {
       name: "batman",
       message: "",
-      isCorrect: false,
+      isCorrect: true,
     };
 
     const newQuoteIndex = Math.floor(Math.random() * api.length);
-    setQuoteIndex(newQuoteIndex);
-    setWordToGuess(randomWord(api[newQuoteIndex].content));
+    let newWordToGuess = wordToGuess;
+    const isGoodResponse =
+      userMessage.toLowerCase() === wordToGuess.toLowerCase();
 
     // Good answer
-    if (userMessage.toLowerCase() === wordToGuess.toLowerCase()) {
+    if (isGoodResponse) {
       setScore(score + 10);
       userResponse.isCorrect = true;
       batmanResponse.isCorrect = true;
       batmanResponse.message = "Good.";
+      newWordToGuess = randomWord(api[newQuoteIndex].content);
+      setWordToGuess(newWordToGuess);
+      setQuoteIndex(newQuoteIndex);
 
       if (winstreak === 2) {
         setBatFace(batFaceData.happy);
@@ -134,37 +96,54 @@ export default function ChatContainer() {
       winstreak = 0;
       losestreak += 1;
       batmanResponse.message = "you are a loser";
+      batmanResponse.isCorrect = false;
 
       if (losestreak === 2) {
         setBatFace(batFaceData.angry);
       }
     }
 
-    setMessageList([...messageList, userResponse, batmanResponse]);
+    setMessageList([
+      ...messageList,
+      userResponse,
+      batmanResponse,
+      {
+        name: "batman",
+        message: cryptedQuote(
+          api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
+          newWordToGuess
+        ),
+      },
+    ]);
 
     setUserMessage("");
   };
 
   return (
     <>
-      <h4>SCORE : {score}</h4>
-      <div className="boite">
+      <h3>{alias}</h3>
+      <h4>
+        SCORE : {score} / {wordToGuess}
+      </h4>
+      <div className="boite border-amber-100">
         {/* ------- Header du Chat / là où s'affiche le statut de Batman------- */}
         <div className="chat-header px-6 py-4 flex flex-row flex-none justify-between items-center shadow bg-amber-400">
           <div className="flex">
             <div className="w-12 h-12 mr-4 relative flex flex-shrink-0">
               <BatFace face={batFace} />
             </div>
-            <div className="text-sm text-gray-900">
+            <div className="text-sm text-gray-900 flex flex-col items-start">
               <p className="font-bold">Batman</p>
               <p>Justicier et mauvais perdant</p>
             </div>
           </div>
+
           {!timerEnded && (
             <h3 className="bg-black  rounded-full p-3">
-              <Timer duration={60} onFinished={() => setTimerEnded(true)} />
+              <Timer duration={20} onFinished={onGameEnd} />
             </h3>
           )}
+
           <div className="flex">
             <span className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2">
               <svg
@@ -194,14 +173,9 @@ export default function ChatContainer() {
         </div>
         {/* ------- Body du Chat / là intègre les citations et les réponses ------- */}
 
-        <div className="chat-body p-4 flex-1 overflow-y-scroll">
-          <CryptedBubble
-            batFace={batFace}
-            citationCryptee={cryptedQuote(api[quoteIndex].content, wordToGuess)}
-          />
-
+        <div className="chat-body p-4 flex-1 max-h-80 overflow-y-scroll ">
           {messageList.map((mess) => (
-            <div>
+            <>
               {mess.name === "user" && (
                 <BubbleAnswer
                   answer={mess.message}
@@ -217,7 +191,7 @@ export default function ChatContainer() {
                   }
                 />
               )}
-            </div>
+            </>
           ))}
         </div>
 
@@ -256,11 +230,11 @@ export default function ChatContainer() {
                 <path d="M9,18 L9,16.9379599 C5.05368842,16.4447356 2,13.0713165 2,9 L4,9 L4,9.00181488 C4,12.3172241 6.6862915,15 10,15 C13.3069658,15 16,12.314521 16,9.00181488 L16,9 L18,9 C18,13.0790094 14.9395595,16.4450043 11,16.9378859 L11,18 L14,18 L14,20 L6,20 L6,18 L9,18 L9,18 Z M6,4.00650452 C6,1.79377317 7.79535615,0 10,0 C12.209139,0 14,1.79394555 14,4.00650452 L14,8.99349548 C14,11.2062268 12.2046438,13 10,13 C7.790861,13 6,11.2060545 6,8.99349548 L6,4.00650452 L6,4.00650452 Z" />
               </svg>
             </button>
-            <div className="relative flex-grow">
-              <label htmlFor="cryptedQuoteAnswer">
-                <form onSubmit={action}>
+            <div className="flex-grow">
+              <label className="flex-grow" htmlFor="cryptedQuoteAnswer">
+                <form className="relative flex-grow" onSubmit={action}>
                   <input
-                    className="rounded-full py-2 pl-3 pr-10 w-full border border-amber-800 focus:border-amber-300 bg-gray-300 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
+                    className=" rounded-full py-2 pl-3 pr-10 w-full border border-amber-800 focus:border-amber-300 bg-gray-300 focus:bg-gray-900 focus:outline-none text-gray-200 focus:shadow-md transition duration-300 ease-in"
                     type="text"
                     disabled={timerEnded}
                     placeholder="Aa"
@@ -268,15 +242,15 @@ export default function ChatContainer() {
                     value={userMessage}
                     onSubmit={action}
                   />
+                  <button
+                    type="button"
+                    disabled={timerEnded}
+                    onClick={action}
+                    className="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-red-300 hover:text-amber-600 w-6 h-6"
+                  >
+                    <img src={img1} alt="blabla" />
+                  </button>
                 </form>
-                <button
-                  type="button"
-                  disabled={timerEnded}
-                  onClick={action}
-                  className="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-red-300 hover:text-amber-600 w-6 h-6"
-                >
-                  <img src={img1} alt="blabla" />
-                </button>
               </label>
             </div>
             <button
@@ -290,6 +264,15 @@ export default function ChatContainer() {
           </div>
         </div>
       </div>
+
+      {timerEnded && (
+        <Link
+          className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
+          to="/scoreboard"
+        >
+          Scoreboard
+        </Link>
+      )}
     </>
   );
 }
