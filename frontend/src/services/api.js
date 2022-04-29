@@ -1,1126 +1,1126 @@
 const api = [
   {
-    title: "film Si seulement...",
+    title: "film: Si seulement...",
     content:
       "On dit que dans un couple il y en a toujours un qui aime plus que l'autre, j'aurais préféré que ce ne soit pas moi.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content: "Le coeur d'une femme est un océan de secrets.",
   },
   {
-    title: "film Le journal de Bridget Jones",
+    title: "film: Le journal de Bridget Jones",
     content:
       "Pourquoi les personnes en couple demandent toujours aux célibataires comment vont les amours, est-ce que nous on leur saute dessus pour savoir s'ils baisent encore.",
   },
   {
-    title: "film Stella",
+    title: "film: Stella",
     content: "Quand la misère sonne, l'amitié sort par la fenêtre",
   },
   {
-    title: "film La Ligne Verte",
+    title: "film: La Ligne Verte",
     content:
       "Je suis fatigué parton, fatigué de devoir courir les routes et d'être seul comme un moineau sous la pluie. Fatigué d'avoir jamais un ami pour parler, pour me dire où on va, d'où on vient et pourquoi. Mais surtout je suis fatigué de voir les hommes se battre les uns les autres, je suis fatigué de toute la peine et la souffrance que je sens dans le monde.",
   },
   {
-    title: "film Lilo &amp; Stitch",
+    title: "film: Lilo &amp; Stitch",
     content:
       '" ohana " signifie famille, famille signifie que personne ne doit être abandonné, ni oublié.',
   },
   {
-    title: "film Cendrillon",
+    title: "film: Cendrillon",
     content:
       "Sois courageuse et sois gentille. Où il y a de la bonté, il y a du bien et quand il y a du bien, il y a de la magie",
   },
   {
-    title: "film La princesse et la grenouille",
+    title: "film: La princesse et la grenouille",
     content:
       "Travailler dur est la seule manière d'avoir ce que tu veux dans ce monde.",
   },
   {
-    title: "film Into the wild",
+    title: "film: Into the wild",
     content:
       "Penser que la vie humaine ne peut être régie que par la raison, c'est nier la possibilité même de la vivre.",
   },
   {
-    title: "film Scarface",
+    title: "film: Scarface",
     content:
       "Moi je n'ai confiance qu'en mon manche et ma parole... l'une est de fer et l'autre d'acier !",
   },
   {
-    title: "film Sur la route de Madison",
+    title: "film: Sur la route de Madison",
     content:
       "Je te veux pour toujours. Je veux t'aimer comme je t'aime en ce moment pour le reste de ma vie. Mais tu ne comprends pas? On perdrait tout si on partait ensemble. Je ne peux pas renier toute une vie pour en construire une nouvelle. Tout ce que je peux faire, c'est maintenir ces deux états d'esprit. Aide-moi ! Aide-moi à faire en sorte que mon amour pour toi ne disparaisse jamais !",
   },
   {
-    title: "film Le bon, la brute et le truand",
+    title: "film: Le bon, la brute et le truand",
     content:
       "Tu vois, le monde se divise en deux catégories, ceux qui ont un pistolet chargé et ceux qui creusent. Toi, tu creuses.",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "Mon coeur jusqu'à présent a-il-aimé ? Jurez que non, mes yeux, car jamais avant cette nuit je n'avais vu la vraie beauté.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content: "Trois consonnes, quatre voyelles et un seul sens : je t'aime.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "Je veux dire, j'ai tout ce qu'il me faut ici avec moi : j'ai de l'air dans les poumons et quelques feuilles blanches pour travailler. J'adore me réveiller le matin sans savoir ce qu'il va m'arriver, qui je vais rencontrer, où je vais échouer. Il y a quelques jours, j'ai dormi sous un pont ; et aujourd'hui je suis ici, sur le plus grand navire du monde, à boire du champagne en de si bonne compagnie. Je pense que la vie est un don et je ne veux pas la gâcher, on ne sait pas quelle donne on aura le jour suivant. On apprend à accepter la vie comme elle vient pour que chaque jour compte.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Il y a un adage qui dit qu'on fait toujours du mal à ceux qu'on aime mais il oublie de dire qu'on aime ceux qui nous font du mal.",
   },
   {
-    title: "film August Rush",
+    title: "film: August Rush",
     content:
       "La musique est partout autour de nous, il suffit juste d'écouter.",
   },
   {
-    title: "film N'oublie jamais",
+    title: "film: N'oublie jamais",
     content:
       "Le plus bel amour est celui qui éveille l'âme, et nous fait nous surpasser. Celui qui enflamme notre coeur et apaise nos esprit. C'est ce que tu m'as apporté.",
   },
   {
-    title: "Film Hitch Expert en séduction",
+    title: "Film: Hitch Expert en séduction",
     content:
       "La vie ce n'est pas le nombre d'années pendant lesquelles on respire, ce sont les moments qui vous coupent le souffle.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "- Qui êtes-vous ? - Qui ? \" Qui \" n'est autre que la forme qui résulte de la fonction de \" qu'est-ce-que \", et ce que je suis c'est un homme sous un masque. - Ça je vois... - De toute évidence. Je ne mets pas en doute ton sens de l'observation, je ne fais que mettre en exergue le paradoxe qui est de demander à un homme masqué qui il est.",
   },
   {
-    title: "film 21 grammes",
+    title: "film: 21 grammes",
     content:
       "On dit que nous perdons tous 21 grammes au moment précis de notre mort. Le poids de cinq pièces de monnaie. Le poids d'une barre de chocolat. Le poids d'un colibri. 21 grammes. Est-ce le poids de notre âme ? Est-ce le poids de la vie ?",
   },
   {
-    title: "film Into the wild",
+    title: "film: Into the wild",
     content: "Le bonheur n'est réel que lorsqu'il est partagé.",
   },
   {
-    title: "film Et Dieu créa la femme",
+    title: "film: Et Dieu créa la femme",
     content:
       "L'avenir, c'est ce qu'on a inventé de mieux pour gâcher le présent.",
   },
   {
-    title: "film Le bon, la brute et le truand",
+    title: "film: Le bon, la brute et le truand",
     content: "Je finis toujours le travail pour lequel on me paie.",
   },
   {
-    title: "film Dikkenek",
+    title: "film: Dikkenek",
     content:
       "Je sais que je plais pas à tout le monde... Mais quand je vois à qui je plais pas, je m'demande si ça me dérange vraiment.",
   },
   {
-    title: "film Alice au pays des merveilles",
+    title: "film: Alice au pays des merveilles",
     content: "Aucune épreuve n'a jamais été surmontée en versant des larmes.",
   },
   {
-    title: "film La Haine",
+    title: "film: La Haine",
     content:
       "C'est l'histoire d'un homme qui tombe d'un immeuble de 50 étages. Le mec, au fur et à mesure de sa chute, il se répète sans cesse pour se rassurer : \" Jusqu'ici tout va bien... Jusqu'ici tout va bien... Jusqu'ici tout va bien. \" Mais l'important, c'est pas la chute. C'est l'atterrissage.",
   },
   {
-    title: "film RRRrrrr !!!",
+    title: "film: RRRrrrr !!!",
     content:
       '- Je vais te réciter un court poème : " Le ciel ". - Oh c\'est beau. - Ouais mais je suis pas trop sûr du début. - Si " le " c\'est bien.',
   },
   {
-    title: "film Tout pour plaire",
+    title: "film: Tout pour plaire",
     content:
       "C'est vous qui avez raison, on est jamais déçu quand on s'attend à rien. Moi c'est mon problème, j'y arrive pas.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "On ne lit pas et on n'écrit pas de la poésie parce que ça fait joli. Nous lisons et nous écrivons de la poésie parce que nous faisons partie de la race humaine ; et que cette même race foisonne de passions. La médecine, la loi, le commerce et l'industrie sont de nobles occupations, et nécessaires pour la survie de l'humanité. Mais la poésie, la beauté et la dépassement de soi, l'amour : c'est tout ce pour quoi nous vivons. Écoutez ce que dit Whitman : « Ô moi ! Ô vie !... Ces questions qui me hantent, ces cortèges sans fin d'incrédules, ces villes peuplées de fous. Quoi de bon parmi tout cela ? Ô moi ! Ô vie ! ». Réponse : que tu es ici, que la vie existe, et l'identité. Que le spectacle continue et que tu peux y apporter ta rime. Que le spectacle continue et que tu peux y apporter ta rime... Quelle sera votre rime ?",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content:
       "Mon nom est Maximus Desimus Meridius, commandant en chef des armées du nord, général des légions Félix, fidèle serviteur du vrai empereur Marc Aurel. Père d'un fils assassiné, époux d'une femme assassiné, et j'aurais ma vengeance dans cette vie ou dans l'autre.",
   },
   {
-    title: "film La cité de la peur",
+    title: "film: La cité de la peur",
     content:
       "- Mais mon chien est mort par contre, alors si je pouvais dormir chez toi juste pour avoir une présence, un compagnon pour pas être seul. - Ça fait 3 fois qu'il est mort ton chien. - Oui, mais il a beaucoup souffert !",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Cette histoire de développement durable, c'est de la connerie, on est déjà foutu ; c'est comme si on exigeait à un cancéreux en phase terminale d'arrêter de fumer sur son lit de mort.",
   },
   {
-    title: "film Ghost rider",
+    title: "film: Ghost rider",
     content:
       "Oubli les amis, oubli la famille, oubli... l'amour. Désormais tu seras le rider jusqu'à la fin de tes jours.",
   },
   {
-    title: "film Et si c'était vrai...",
+    title: "film: Et si c'était vrai...",
     content:
       "À chaque fois que je rencontre un mec célibataire, c'est une lesbienne !",
   },
   {
-    title: "film Harry Potter à l'école des sorciers",
+    title: "film: Harry Potter à l'école des sorciers",
     content:
       "Il faut du courage pour affronter ses ennemis mais il en faut encore plus pour affronter ses amis.",
   },
   {
-    title: "film Invictus",
+    title: "film: Invictus",
     content:
       "Le football est un sport de gentlemen pratiqué par des voyou et le rugby et un sport de voyou pratiqué par des gentlemen.",
   },
   {
-    title: "film Kung Fu Panda",
+    title: "film: Kung Fu Panda",
     content:
       "Hier est derrière, demain est mystère, et aujourd'hui est un cadeau, c'est pour cela qu'on l'appelle le présent.",
   },
   {
-    title: "film Les visiteurs",
+    title: "film: Les visiteurs",
     content:
       "Messire, messire, un sarrasin dans une charriote du diable ! c'est tout ferré y'a point d'boeuf pour tirer !",
   },
   {
-    title: "film Sex and the City - le film",
+    title: "film: Sex and the City - le film",
     content:
       "Être célibataire, c'est pouvoir écouter des vieux tubes ringards dans son appartement sans que personne ne nous critique.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "- Ne fais pas ça, ne fais pas celle qui m'dit adieu. Pas encore... est-ce que tu m'a compris. Écoute, tu va te sortir de là, tu vivras longtemps, et tu vas faire plein de bébés... et tu va les voir grandir, et tu mourras très vieille, une vieille dame, bien au chaud dans ton lit... Pas ici... pas cette nuit... pas comme ça, est-ce que tu m'as compris ? Gagner ce voyage est la meilleur chose qui me soit arrivé, il m'a mené à toi, et je lui suis reconnaissant pour ça. Tu dois me faire cet honneur, à présent promets moi, que tu vas survivre, que tu n'abandonneras jamais, jamais... même si ça a l'air sans espoir... promets le moi, maintenant... et ne romps jamais cette promesse. - Je le promets. - N'abandonne jamais. - J'abandonnerais jamais.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "Les peuples ne devraient pas avoir peur de leurs gouvernements. Les gouvernements devraient avoir peur du peuple.",
   },
   {
-    title: "film Top gun",
+    title: "film: Top gun",
     content:
       "L'ennemi est dangereux Maverick, mais toi, t'es pire que l'ennemi... tu es dangereux et con !",
   },
   {
-    title: "film Une journée en enfer",
+    title: "film: Une journée en enfer",
     content: "Tu diras bonjour à ton frère. Bon voyage espèce d'enfoiré !",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content:
       "Le problème, c'est que même si tu m'disais \" je t'adore \" j'te croirais pas ! Je sais plus quand tu joues et quand tu joues pas. J'suis perdue. Attends deux secondes, j'ai pas fini. Dis-moi qu'tu m'aimes. Dis-moi juste que tu m'aimes. Parce que moi j'oserai jamais te l'dire la première, j'aurais trop peur que tu crois qu'c'est un jeu.",
   },
   {
-    title: "film Astérix et Obélix : mission Cléopâtre",
+    title: "film: Astérix et Obélix : mission Cléopâtre",
     content:
       "C'est trop calme. j'aime pas trop beaucoup ça. J'préfère quand c'est un peu trop plus moins calme.",
   },
   {
-    title: "film Je l'aimais",
+    title: "film: Je l'aimais",
     content:
       "On se met pas à ne plus aimer quelqu'un. On se met à aimer quelqu'un d'autre, peut-être aussi parce qu'il y a de la place.",
   },
   {
-    title: "film Arthur",
+    title: "film: Arthur",
     content:
       "- Ma mère est morte quand j'avais six ans. Mon père m'a violée quand j'en avais douze. - Ah... vous avez eu six années relativement bonnes.",
   },
   {
-    title: "film La route d'Eldorado",
+    title: "film: La route d'Eldorado",
     content:
       "- Suivons le chemin ! - Quel chemin ? - Le chemin que nous traçons !",
   },
   {
-    title: "film Twilight - Chapitre 1 : fascination",
+    title: "film: Twilight - Chapitre 1 : fascination",
     content:
       "Dans ma famille, on n'est pas comme les autres de notre espèce. On ne chasse que les animaux, on a appris à contrôler notre soif. Mais c'est toi et, ton parfum, t'es comme une drogue pour moi. C'est comme si t'étais ma propre. Marque d'héroïne.",
   },
   {
-    title: "film Sexe intentions",
+    title: "film: Sexe intentions",
     content:
       "- Mais pourquoi tu me fuis tout le temps ?!- Tu veux vraiment le savoir ? - Oui je veux vraiment le savoir !- C'est parce que je ne réponds plus de moi quand je suis avec toi.",
   },
   {
-    title: "film La Haine",
+    title: "film: La Haine",
     content:
       "C'est l'histoire d'un homme qui tombe d'un immeuble de 50 étages. Le mec, au fur et à mesure de sa chute, il se répète sans cesse pour se rassurer :  Jusqu'ici tout va bien. Jusqu'ici tout va bien. Jusqu'ici tout va bien. Mais l'important, c'est pas la chute, c'est l'atterrissage.",
   },
   {
-    title: "film I'm not there",
+    title: "film: I'm not there",
     content: "L'amour et le sexe sont deux choses qui plantent les gens.",
   },
   {
-    title: "film Volt",
+    title: "film: Volt",
     content: "Un chien, un chat et un rongeur c'est la recette du bonheur.",
   },
   {
-    title: "film Un air de famille",
+    title: "film: Un air de famille",
     content:
       "- Travaille, toi. Hein, t'es pas comme Napoléon, toi, t'es pas capable de parler et de faire le ménage en même temps ?\n- Il faisait le ménage, Napoléon ?",
   },
   {
-    title: "film Persepolis",
+    title: "film: Persepolis",
     content: "Mieux vaut être célibataire que mariée à un chieur.",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content:
       "- Maman maman, tu as oublié ton trésor. - Mon seul trésor, c'est toi !",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content: "- Tu crois au coup de foudre ?\n- Ouais...\n- Naïve.",
   },
   {
-    title: "film La cité de la peur",
+    title: "film: La cité de la peur",
     content:
       "On peut tromper mille fois mille personnes, non, on peut tromper une fois mille personnes, mais on ne peut pas tromper mille fois mille personnes. Non, on peut tromper une fois mille personne mais on peut pas tromper mille fois une personne. Non.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Mais, c'est pas un vrai suicide, soit tranquille c'est probablement rien d'autre qu'un appel à l'aide.",
   },
   {
-    title: "film La belle et la bête",
+    title: "film: La belle et la bête",
     content:
       "Je veux partir à l'aventure, tout parcourir... Je veux tellement plus que ce qu'ils ont planifié pour moi",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content:
       "Père bien aimé, veille sur ma femme et mon fils l'épée à la main. Murmure-leur que je ne vis que pour les retrouver, car tout le reste n'est que poussière.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "La pub nous fait courir après des voitures et des fringues, on fait des boulots qu'on déteste pour se payer des merdes qui nous servent à rien !",
   },
   {
-    title: "film The big Lebowski",
+    title: "film: The big Lebowski",
     content:
       "Mon art impressionne beaucoup par son côté vaginal, les hommes en sont déstabilisés, le mot en lui-même les perturbe... vagin. Ils n'aiment pas l'entendre et le trouvent difficile à prononcer alors que sans battre des cils, ils parlent volontiers de leur bite, de leur dard ou alors de leur... zézette.",
   },
   {
-    title: "film Brice de nice",
+    title: "film: Brice de nice",
     content:
       "Je respecte ton avis tu vois mais en même temps c'est pas le mien donc c'est pas le bon.",
   },
   {
-    title: "film Quand Harry rencontre Sally",
+    title: "film: Quand Harry rencontre Sally",
     content:
       "J'adore que tu aies le nez qui coule quand il fait 22°, j'adore que tu mettes une heure et demi pour commander un sandwich, j'adore la petite ride que tu as là quand tu me regarde comme si j'étais un dingue. J'adore qu'après avoir passé la journée avec toi j'ai les vêtements tout parfumés par ton odeur et j'adore que tu sois la dernière personne à laquelle j'ai envie de parler avant de me mettre au lit. Et ce n'est pas parce que je suis seul et que c'est la saint sylvestre. Si je suis la moi ce soir, c'est parce que quand on se rend compte qu'on veut passer le reste de ses jours avec une femme, faut pas traîner les pieds, il faut se lancer aussitôt que possible.",
   },
   {
-    title: "film The Matrix",
+    title: "film: The Matrix",
     content:
       "Etre visionnaire c'est regarder le monde au delà du temps. Mais on ne voit pas plus loin, que les choix que l'on ne peut pas comprendre.",
   },
   {
-    title: "film Scarface",
+    title: "film: Scarface",
     content:
       "Tu as la drogue, tu as l'argent; tu as l'argent, tu as le pouvoir; tu as le pouvoir, tu as toutes les nanas",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "J'ai de l'air dans les poumons et quelques feuilles blanches pour travailler. J'adore me réveiller le matin sans savoir ce qu'il va m'arriver, qui je vais rencontrer, où je vais échouer. Il y a quelques jours j'ai dormi sous un pont et aujourd'hui je suis ici, sur le plus grand navire du monde, à boire du champagne en de si bonne compagnie. Je pense que la vie est un don et je ne veux pas le gâcher, on ne sait pas quelle donne on aura le jour suivant, on apprend à accepter la vie comme elle vient, pour que chaque jour compte.",
   },
   {
-    title: "film Fame (2009)",
+    title: "film: Fame (2009)",
     content:
       "Réussir ce n'est pas toujours ce qu'on croit. Ce n'est pas devenir célèbre, ni riche ou encore puissant. Réussir c'est sortir de son lit le matin et être heureux de ce qu'on va faire durant la journée, si heureux qu'on a l'impression de s'envoler. C'est travailler avec des gens qu'on aime. Réussir, c'est être en contact avec le monde et communiquer sa passion. C'est trouver une façon de rassembler des gens qui n'ont peut-être rien d'autre en commun qu'un rêve. C'est se coucher le soir en se disant qu'on a fait du mieux qu'on a pu. Réussir c'est connaître la joie, la liberté et l'amitié. Je dirais que réussir, c'est aimer.",
   },
   {
-    title: "film Crying Freeman",
+    title: "film: Crying Freeman",
     content:
       "Tout peut basculer si vite dans une vie, si vite que le passé s'efface comme dans un rêve.",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "Ô Roméo ! Roméo ! Pourquoi es-tu Roméo ? Renie ton père et abdique ton nom ; ou, si tu ne le veux pas, jure de m'aimer, et je ne serai plus une Capulet.",
   },
   {
-    title: "film Les visiteurs",
+    title: "film: Les visiteurs",
     content:
       "Ma mère avait pour nom Gwendoline, elle est morte dévorée par les loups... parce que notre père qu'était parti pour boire à la taverne de Duchenot a crevé gelé dans l'étang à cause de son pied-bot. C'est dingue nan ?",
   },
   {
-    title: "film The crow",
+    title: "film: The crow",
     content:
       "Il y a longtemps, les gens croyaient que quand quelqu'un meurt, un corbeau emporte son âme jusqu'au pays des morts. Mais il arrive parfois quand des choses trop horribles se soient passées que l'âme emporte avec elle une immense tristesse et qu'elle ne puisse pas trouver le repos et quelque fois, mais seulement quelque fois, le corbeau peut faire revenir cette âme pour que le bien reprenne son droit sur le mal.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content: "Ce que j'ai subi a fait de moi ce que je suis.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "Toutes les parties de mon être vont périr. Toutes. Sauf une. Un détail. Un tout petit détail, fragile, mais qui est la seule chose dans ce monde qui ait de la valeur. Il ne faut jamais le perdre ou l'abandonner. Il ne faut jamais laisser personne nous le prendre. J'espère qui que vous soyez que vous vous échapperez d'ici. J'espère que le monde changera et que tout s'arrangera. Et ce que j'espère plus que tout c'est que vous me comprendrez quand je vous dis que même si je ne vous connais pas, même si je n'ai jamais eu l'occasion de vous rencontrer, de rire avec vous, de pleurer avec vous... ou de vous embrasser, je vous aime. De tout mon coeur... je vous aime.",
   },
   {
-    title: "film Hancock",
+    title: "film: Hancock",
     content:
       "- Toi tu pues l'alcool à plein nez . - C'est parce que j'ai bu pov'conne !",
   },
   {
-    title: "film Les visiteurs",
+    title: "film: Les visiteurs",
     content:
       "Et on lui pèlera le jonc comme au bailli du Limousin ! Qu'on a fendu un beau matin. Qu'on a pendu ! Avec ses tripes !",
   },
   {
-    title: "film Cher John",
+    title: "film: Cher John",
     content:
       "Chaque jour que je passe est un vrai cauchemar pour réussir à vivre sans toi...",
   },
   {
-    title: "film La cité de la peur",
+    title: "film: La cité de la peur",
     content:
       "- Vous voulez un whisky ? - Non, juste un doigt. - Vous voulez pas un whisky d'abord ?",
   },
   {
-    title: "film Into the wild",
+    title: "film: Into the wild",
     content:
       "Vous avez tord de croire que la joie de vivre tient principalement aux rapports humains, vous vous trompez. Dieu en a mis dans tout ce qui nous entoure, on en trouve dans chaque détail, chaque petite chose de la vie quotidienne. Pour percevoir ces choses là, il suffirait de changer de point de vue.",
   },
   {
-    title: "film Trainspotting",
+    title: "film: Trainspotting",
     content:
       "La vie est rasoir et inutile. Au départ, on est plein de rêves extraordinaires et puis on se retrouve assis dessus. On se rend compte qu'on va tous y passer sans avoir vraiment trouvé les bonnes réponses. On prend au sérieux toutes les théories à cent litres de salive à l'heure et, en fait, c'est nos propre vies qu'ils nous servent mais sous d'autres formes. Et jamais ils nous ont musclés les pattes avec des trucs cohérents sur les vraies grandes choses. En deux mots, ta vie est courte, décevante et ensuite tu meurs. On occupe nos vies avec de la merde, comme les carrières et les relations, pour nous faire croire que tout n'est pas totalement inutile.",
   },
   {
-    title: "film Virgin suicides",
+    title: "film: Virgin suicides",
     content: "Là où les pièces manquantes manqueront à jamais.",
   },
   {
-    title: "film The Matrix",
+    title: "film: The Matrix",
     content: "Ne pense pas que tu es, sache que tu es.",
   },
   {
-    title: "film Peter Pan",
+    title: "film: Peter Pan",
     content: "Vivre, ça doit être une sacrément belle aventure !",
   },
   {
-    title: "film Peter Pan",
+    title: "film: Peter Pan",
     content: "Deuxième étoile à droite et tout droit jusqu'au matin.",
   },
   {
-    title: "film Le premier jour du reste de ta vie",
+    title: "film: Le premier jour du reste de ta vie",
     content:
       "- Notre famille se désagrège et c'est tout ce que ça vous fait ? - Ouais, ça me fait de l'air, tu peux pas savoir !",
   },
   {
-    title: "film Scoop",
+    title: "film: Scoop",
     content:
       "- Vous avez une famille ?- J'avais une femme mais elle m'a plaqué. Non mais vous le croyez ça ?- Dans l'absolu. - Elle trouvait que j'étais trop immature et que je ne serai jamais adulte. Ça j'aurais pu le réfuter facilement, lui prouver le contraire mais. Je levais la main et elle refusait de me donner la parole.",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "Viens douce nuit, viens vite amoureuse au front noir, donne moi mon Roméo. Et quand je mourrai que tu le prennes et l'éclates en petites étoiles, dès lors, il embellira tant le visage du ciel que tout l'univers sera amoureux de la nuit, et que nul ne pourra plus adorer l'aveuglant soleil.",
   },
   {
-    title: "film Kuzco, l'empereur mégalo",
+    title: "film: Kuzco, l'empereur mégalo",
     content: "Cadeau d'anniversaire de moi à moi ! Oh ! Comment me remercier ?",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content: "Si tu sautes, moi je saute, pas vrai ?",
   },
   {
-    title: "film Into the wild",
+    title: "film: Into the wild",
     content:
       "À l'amour, la gloire, l'argent, la loyauté, la justice, je préfère la vérité.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "- Mon père était écrivain. Il vous aurait plu. Il disait que les artistes utilisaient les mensonges pour dire la vérité, et que les politiciens le faisaient pour cacher la vérité. - Un homme selon mon coeur.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "La vérité c'est comme une couverture trop petite. Tu peux tirer dessus de tous les côtés, tu auras toujours les pieds froids.",
   },
   {
-    title: "film Là-haut",
+    title: "film: Là-haut",
     content:
       "Bonjour madame monsieur, je m'appelle Russel et je suis un explorateur de la tribu des Wapitis section 54 12e campement. Avez-vous besoin que je vous rende un service monsieur ?",
   },
   {
-    title: "film Kingdom of Heaven",
+    title: "film: Kingdom of Heaven",
     content:
       "Soit sans peur face à tes ennemis. Soit juste et droit pour être aimé de Dieu. Dit toujours la vérité, même si cela doit te couter la vie. Protège les innocents, et garde toi du mal. Tel est ton serment.",
   },
   {
-    title: "film Rebelle",
+    title: "film: Rebelle",
     content:
       "Il y a ceux qui disent que le destin est au-delà de notre contrôle. De que nos destinés ne sont pas à notre portée. Mais je sais mieux. Notre destin vit en nous. Il suffit d'être assez courageux pour le voir.",
   },
   {
-    title: "film American History X",
+    title: "film: American History X",
     content:
       "La haine est une saloperie, la vie est trop courte pour passer son temps à avoir la haine, ça n'en vaut pas la peine.",
   },
   {
-    title: "film Joueuse",
+    title: "film: Joueuse",
     content:
       "Quand on prend des risques, on peut perdre. Quand on n'en prend pas, on perd toujours.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "- Ne fais pas ça, ne fais pas celle qui m'dit adieu. Pas encore... est-ce que tu ma compris? Ecoute, tu vas te sortir de là, tu vivras longtemps, et tu vas faire plein de bébés... et tu vas les voir grandir, et tu mourras très vieille, une vieille dame, bien au chaud dans ton lit... Pas ici... pas cette nuit... pas comme ça, est-ce que tu m'as compris ? Gagner ce voyage est la meilleur chose qui me soit arrivé, il m'a mené à toi, et je lui suis reconnaissant pour ça. Tu dois me faire cet honneur, à présent promets moi, que tu vas survivre, que tu n'abandonneras jamais, jamais... même si ça a l'air sans espoir... promets le moi, maintenant... et ne romps jamais cette promesse. - Je le promets. - N'abandonne jamais. - J'abandonnerais jamais.",
   },
   {
-    title: "film RRRrrrr !!!",
+    title: "film: RRRrrrr !!!",
     content:
       "- Ça vous rappelle pas un vieux crime qui a été commis avant-hier ? - Non non, je ne pense pas que ça doit être le même crimier, y'a qu'une narine de cousue là... - Ben il aurait peut-être eu le temps de finir si il avait pas été dérangé par ce con de préveneur de nuit, hein !",
   },
   {
-    title: "film Le bon, la brute et le truand",
+    title: "film: Le bon, la brute et le truand",
     content: "Si on travail pour gagner sa vie, pourquoi se tuer au travail ?",
   },
   {
-    title: "film Twilight - Chapitre 4 : révélation",
+    title: "film: Twilight - Chapitre 4 : révélation",
     content:
       "Tu sais comment on noie une blonde ? En collant un miroir au fond d'une piscine.",
   },
   {
-    title: "film La tour montparnasse infernale",
+    title: "film: La tour montparnasse infernale",
     content:
       "Wow, tout le monde se calme ! Ceci est un police piton 357 magnum, avec ça mon pôte, j'te fais un trou dans l'buffet, tu fais trois fois l'tour de ton slip, direction Pekin !",
   },
   {
-    title: "film Ninja Assassin",
+    title: "film: Ninja Assassin",
     content:
       "La Faiblesse oblige la force, comme la trahison engendre le sang.",
   },
   {
-    title: "film Le fabuleux destin d'Amélie Poulain",
+    title: "film: Le fabuleux destin d'Amélie Poulain",
     content: " Les temps sont durs pour les rêveurs",
   },
   {
-    title: "film Twilight - Chapitre 2 : tentation",
+    title: "film: Twilight - Chapitre 2 : tentation",
     content:
       "Son absence a envahi tout mon horizon, comme si on avait percé un trou béant dans ma poitrine.",
   },
   {
-    title: "film Moulin rouge !",
+    title: "film: Moulin rouge !",
     content:
       "- As tu foi en la beauté ? - Oui. - Et la liberté ? - Tout à fait. - En la vérité ? - Oui. - En l'amour ? - L'amour... l'amour... J'éprouve une foi absolu en l'amour, l'amour c'est l'oxygène, l'amour inspire toute la beauté du monde, l'amour ne nous amène que du bonheur, tout ce qui compte c'est l'amour.",
   },
   {
-    title: "film Sweet November",
+    title: "film: Sweet November",
     content:
       "Si j'ai appris une seule chose dans la vie, c'est que les gens qu'on aime le plus, il faut les garder autour de nous aussi longtemps que possible.",
   },
   {
-    title: "film Affreux, sales et méchants",
+    title: "film: Affreux, sales et méchants",
     content:
       "La famille, c'est comme les godasses, plus elles vous serrent et plus elles vous font mal",
   },
   {
-    title: "film Dikkenek",
+    title: "film: Dikkenek",
     content:
       "- Tu m'mettras la p'tite soeur ! -  La même ? - Oui j't'ai dit tu mettras la p'tite soeur, pis tu m'changeras d'verre, il a goût de savon celui là, c'est pas que j'aime pas la mousse, mais quand même.",
   },
   {
-    title: "film Le Bossu",
+    title: "film: Le Bossu",
     content: "Si tu ne viens pas à Lagardère, Lagardère ira à toi !",
   },
   {
-    title: "film Alice au pays des merveilles",
+    title: "film: Alice au pays des merveilles",
     content:
-      "Le meilleur moyen de réaliser l'impossible est de croire que c'est possible.",
+      "Le meilleur: moyen de réaliser l'impossible est de croire que c'est possible.",
   },
   {
-    title: "film Sur la route de Madison",
+    title: "film: Sur la route de Madison",
     content:
       "Les vieux rêves étaient des bons rêves. Ils ne se sont pas réalisés, mais je suis content de les avoir eus.",
   },
   {
-    title: "film Les tontons flingueurs",
+    title: "film: Les tontons flingueurs",
     content:
       "Non mais t'as déjà vu ça ? En pleine paix, y chante et pis crac, un bourre-pif, mais il est complètement fou ce mec ! Mais moi les dingues, j'les soigne, j'm'en vais lui faire une ordonnance, et une sévère, j'vais lui montrer qui c'est Raoul. Aux quatre coins d'Paris qu'on va l'retrouver, éparpillé par petits bouts façon puzzle. Moi quand on m'en fait trop j'correctionne plus, j'dynamite. J'disperse. Et j'ventile.",
   },
   {
-    title: "film Iron Man",
+    title: "film: Iron Man",
     content:
       "Si tu ne décides pas de ton destin c'est ton destin qui décide pour toi.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "Oublie-la, t'as plus de chance de te voir sortir des anges du trou de balle que de fréquenter une fille comme ça.",
   },
   {
-    title: "film Le cinquième élément",
+    title: "film: Le cinquième élément",
     content:
       "À quoi ça sert de sauver la vie quand on voit ce que vous en faites.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "On ne lit pas ni écrit de la poésie parce que c'est joli. On lit et écrit de la poésie car on fait partie de l'humanité. Et l'humanité est faite de passions. La médecine, le droit, le commerce sont nécessaires pour assurer la vie, mais la poésie, la beauté, la romance, l'amour, c'est pour ça qu'on vit.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "- Tu n'en as jamais parlé ? - Non, jamais, à personne, pas même à ton grand père. Le coeur d'une femme est un océan de secret... Mais désormais vous saurez qu'il y avait un dénommé Jack Dawson, et qu'il m'a sauvée, de toutes les façons qu'une personne peut être sauvée. Je n'ai même pas une seule photo de lui. Il n'existe désormais que dans ma mémoire.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Avec l'insomnie, plus rien n'est réel ! Tout devient lointain. Tout est une copie, d'une copie, d'une copie.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "C'était de toute beauté. Nous revendions à des femmes riches la graisse qui provenait de leurs fesses.",
   },
   {
-    title: "film Las Vegas parano",
+    title: "film: Las Vegas parano",
     content:
       "Si je te balance dans la piscine maintenant, tu coules comme un caillou à la con ! T'en a trop pris mon vieux ! T'en a trop pris ! Trop pris ! Et n'essayes pas de lutter hein ! T'aurais des bulles d'air au cerveau, une rupture d'anévrisme, tu te ratatinerais et tu crèverais.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "Vi Veri Veniversum Vivus Vici. Par le pouvoir de la vérité, j'ai de mon vivant, conquis l'univers.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "On est une génération d'hommes élevés par des femmes, je suis pas sur qu'une autre femme soit la solution à nos problèmes.",
   },
   {
-    title: "film Winnie l'ourson",
+    title: "film: Winnie l'ourson",
     content:
       "Combien je suis chanceux d'avoir quelque chose qui me fait dire au revoir très difficilement.",
   },
   {
-    title: "film Yes man",
+    title: "film: Yes man",
     content:
       "Le monde est un terrain de jeu, tous les enfants savent ça, mais on finit par l'oublier en grandissant.",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "Pourquoi cet amour querelleur, cette haine amoureuse, ce tout créé d'un rien, cette pesante légèreté, cette vanité sérieuse, cette innommable chaos des plus aimables formes.",
   },
   {
-    title: "film Mariages",
+    title: "film: Mariages",
     content: "L'amour rend aveugle, le mariage rend la vue.",
   },
   {
-    title: "film Le père noël est une ordure",
+    title: "film: Le père noël est une ordure",
     content:
       "- Écoutez : de l'extérieur c'est déjà magnifique ! Oh Thérèse ! Une serpillère ! C'est formidable, écoutez, fallait pas... - mais non Pierre c'est un gilet. - Ah mais oui bien sûr, c'est un gilet ! Où avais-je la tête ? Il y a des trous plus grands pour mettre les bras ! Si vous saviez comme ça tombe bien, je me disais encore hier soir qu'il me manquait quelque chose pour descendre les poubelles. Je suis ravi Thérèse !",
   },
   {
-    title: "film Mulan",
+    title: "film: Mulan",
     content:
       "- La fleur qui s'épanouit dans l'adversité est la plus rare et la plus belle de toutes. - Majesté. - On ne rencontre pas une file comme ça à chaque dynastie !",
   },
   {
-    title: "film La tour montparnasse infernale",
+    title: "film: La tour montparnasse infernale",
     content:
       "- Ouais c'est pas mon genre. - Bah euh c'est normal ton genre à toi il existe pas, t'as vu ta gueule t'as vu tes bras, ils sont tellement maigres qu'des fois on dirait un velux.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "C'est dans ses rêves que l'homme trouve la liberté, cela fut, est, et restera la vérité.",
   },
   {
-    title: "film Hitch - Expert en séduction",
+    title: "film: Hitch - Expert en séduction",
     content:
       "De plus, la vie de couple ne sert en fait qu'à attendre qu'un meilleur pointe le bout de son nez.",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content: "Ce que vous faites dans la vie résonne dans l'éternité.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Vous n'êtes pas exceptionnels, vous n'êtes pas un flocon de neige merveilleux et unique, vous êtes fait de la même substance organique pourrissante que tout le reste, nous sommes la merde de ce monde prête à servir à tout, nous appartenons tous au même tas d'humus en décomposition.",
   },
   {
-    title: "film Love Actually",
+    title: "film: Love Actually",
     content:
       "Si vous cherchez bien, j'ai la désagréable impression que vous constaterez qu'en définitive, nous sommes cernés par l'amour.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "La capote c'est le soulier de verre de notre génération, on l'enfile quand on rencontre une inconnue, on \" danse \" toute la nuit, et puis on la balance... la capote j'veux dire, pas l'inconnue.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "On est les enfants oubliés de l'histoire, mes amis. On n'a pas de but ni de vraie place. On n'a pas de grande guerre, pas de grande dépression. Notre grande guerre est spirituelle, notre grande dépression, c'est nos vies.",
   },
   {
-    title: "film Arizona Dream",
+    title: "film: Arizona Dream",
     content:
       "On croit que je compte les poissons. Non. Je scrute leur âme, je lis leurs rêves, et ils envahissent les miens. Les gens pensent que c'est con un poisson. C'est faux. Ils savent se taire. C'est les gens qui sont cons. Le poisson qui sait tout n'a pas besoin de penser.",
   },
   {
-    title: "film Ocean's Twelve",
+    title: "film: Ocean's Twelve",
     content:
       "- Je ferai la cuisine, tu parleras ! - Tu veux que je parle ? Avec des mots ? pourquoi crois tu qu'ils ont inventé les fleurs ?",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "Si je ne dois plus penser à elle tu devras m'enseigner à ne plus penser.",
   },
   {
-    title: "film Chinatown",
+    title: "film: Chinatown",
     content:
       "Les hommes politiques, les immeubles immondes et les prostituées finissent par devenir respectables pour peu qu'ils durent.",
   },
   {
-    title: "film RRRrrrr !!!",
+    title: "film: RRRrrrr !!!",
     content: "Guy, elle m'aime ! Je suis un couple maintenant.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "En dépit de tout ce qu'on peut vous raconter, les mots et les idées peuvent changer le monde.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "Je n'aime plus le monde dans lequel je vis ! Et tous les gens autour de moi... et l'inertie de mon existence qui se dérobe sous mes pas, sans que je puisse l'en empêcher... J'ai l'horrible impression d'être dans une pièce pleine de monde et j'ai beau hurler comme une folle, il n'y a personne qui se soucie de moi !",
   },
   {
-    title: "film Le cinquième élément",
+    title: "film: Le cinquième élément",
     content:
       "Vous voulez la jouer soft, je suis pas contrariant. Vous voulez la jouer hard... on va la jouer hard.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "À présent dans cette classe, vous apprendrez à penser par vous-même, vous apprendrez à savourer les mots et le langage !",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Vous n'êtes pas votre travail, vous n'êtes pas votre compte en banque, vous n'êtes pas votre voiture, vous n'êtes pas votre portefeuille, ni votre putain de treillis, vous êtes la merde de ce monde, prête à servir à tout.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Et alors il s'est passé quelque chose, je me suis laissé aller, dans un total oubli de moi-même envahi par la nuit le silence et la plénitude. J'avais trouvé la liberté. Perdre tout espoir, c'était cela la liberté.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "Si vous lisez ceci, alors cet avertissement est pour vous. Chaque mot que vous lisez de ce texte inutile est une autre seconde perdue dans votre vie. N'avez-vous rien d'autre à faire ? Votre vie est-elle si vide que, honnêtement, vous ne puissiez penser à une meilleure manière de passer ces moments ? Ou êtes-vous si impressionné par l'autorité que vous donnez votre respect et vouez votre foi à tous ceux qui s'en réclament ? Lisez-vous tout ce que vous êtes supposés lire ? Pensez-vous tout ce que vous êtes supposés penser ? Achetez-vous ce que l'on vous dit d'acheter ? Sortez de votre appartement. Allez à la rencontre du sexe opposé. Arrêtez le shopping excessif et la masturbation. Quittez votre travail. Commencez à vous battre. Prouvez que vous êtes en vie. Si vous ne revendiquez pas votre humanité, vous deviendrez une statistique. Vous êtes prévenu.",
   },
   {
-    title: "film Le roi lion",
+    title: "film: Le roi lion",
     content: "Écoute le vieux Rafiki, il connait le chemin.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "C'est à madame Justice que je dédie ce concerto, en l'honneur des vacances qu'elle semble avoir prises très loin d'ici et en reconnaissance de l'imposteur qui se dresse à sa place.",
   },
   {
-    title: "film La folie des grandeurs",
+    title: "film: La folie des grandeurs",
     content:
       "Eh ben en tout cas on va pas moisir ici, j'ai un plan pour tous nous évader : Nous rentrons à Madrid, nous conspirons, le roi répudie la reine, la vieille épouse le perroquet, César devient roi, je l'épouse et me voilà reine !",
   },
   {
-    title: "film La folie des grandeurs",
+    title: "film: La folie des grandeurs",
     content:
       "Ne vous excusez pas, ce sont les pauvres qui s'excusent. Quand on est riche, on est désagréable !",
   },
   {
-    title: "film Les bronzés font du ski",
+    title: "film: Les bronzés font du ski",
     content:
       "Quand te reverrais-je ? Pays merveilleux ! Où ceux qui s'aiment, vivent à deux !",
   },
   {
-    title: "film Les bronzés font du ski",
+    title: "film: Les bronzés font du ski",
     content:
       "Si tu veux un conseil, oublie que t'as aucune chance. On sait jamais, sur un malentendu ça peut marcher.",
   },
   {
-    title: "film Remember Me",
+    title: "film: Remember Me",
     content:
       "Gandhi disait que tout ce qu'on fait dans la vie est insignifiant mais qu'il est très important de le faire. Je serais assez d'accord avec sa première phrase. Mickael, tu sais à quel jour je pense. À 22 ans Gandhi avait 3 enfants, Mozart 30 symphonies et Buddy Holly était mort. Une fois tu as dis : \" Nous laissons une part de nous même sur tout ce que nous touchons \". Est-ce que c'est vrai pour tout le monde ? Ou c'était juste de la Poésie à deux balles ?",
   },
   {
-    title: "film Dikkenek",
+    title: "film: Dikkenek",
     content:
       "Ma main à couper qu'ça va encore tourner autour du trou d'balle, ct'histoire.",
   },
   {
-    title: "film Le père noël est une ordure",
+    title: "film: Le père noël est une ordure",
     content:
       "- Je vous ai apporté des Doubitchou... -C'est fin, c'est très fin, ça ce mange sans faim. - C'est une fabrication artisanale. - Oui, effectivement on a un petit peu l'impression que c'est fait à la main, quoi... - Oui, oui, oui, c'est fait à la main, c'est roulé à la main sous les aisselles.",
   },
   {
-    title: "film Sissi",
+    title: "film: Sissi",
     content:
       "Si vous avez de la peine, si la vie est méchante avec vous, réfugiez-vous au coeur de la forêt, elle ne vous décevra jamais. Chaque plante, chaque fleur, chaque arbre, chaque animal sont la preuve vivante de la toute puissance de Dieu et la forêt vous redonnera courage.",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content:
       "Je pense que la vie est un don et je ne veux pas le gâcher, on ne sait pas quelle donne on aura le jour suivant, on apprend à accepter la vie comme elle vient.  Pour que chaque jour compte.",
   },
   {
-    title: "film Ma première fois",
+    title: "film: Ma première fois",
     content:
       "Mon amour, demain je pars pour un grand voyage, et même si je suis triste, je pars heureuse et sereine car j'ai appris avec toi à ne pas avoir peur de ce que nous réserve l'inconnu. J'ai appris que de montrer nos fragilités c'était nous rendre plus fort. J'ai appris à ne pas avoir peur d'aimer, avec toi Zac, j'ai appris à vivre, tu vas tant me manquer et pourtant je sais, je sens en moi que nous allons nous retrouver alors peu importe le nombre de jours ou de semaines qui nous sépare de ce moment là puisque nous nous retrouverons pour longtemps. En attendant, je te laisse un peu de mon odeur et cette petite lumière pour que tu n'aies plus jamais peur du noir tant que tu seras tout seul, tant que je ne serai pas à côté de toi. Je t'aime et je t'attends. Ton étoile, Sarah.",
   },
   {
-    title: "film Il était une fois dans l'ouest",
+    title: "film: Il était une fois dans l'ouest",
     content:
       "- Vous avez amené un cheval pour moi ?- Bah, question chevaux, on est un peu justes, on s'excuse ! - J'en vois deux qui ne sont à personne.",
   },
   {
-    title: "Film la forme de leau",
+    title: "Film: la forme de leau",
     content:
       "Incapable de percevoir ta forme, je te trouve tout autour de moi. \nTa présence emplit mes yeux de ton amour, elle rend humble mon coeur, car tu es partout.",
   },
   {
-    title: "film Topaze",
+    title: "film: Topaze",
     content:
       "- L'argent ne fait pas le bonheur. - Non, mais il l'achète à ceux qui le font.",
   },
   {
-    title: "film Meurs un autre jour",
+    title: "film: Meurs un autre jour",
     content:
       "- Qui t'envoie ? - Ta maman. Elle m'a dit de te dire que tu l'avais beaucoup déçu !",
   },
   {
-    title: "film Un singe en hiver",
+    title: "film: Un singe en hiver",
     content: "C'est pas l'alcool qui me manque, c'est l'ivresse !",
   },
   {
-    title: "film Titanic",
+    title: "film: Titanic",
     content: "Quand on a rien, on a rien à perdre.",
   },
   {
-    title: "film Le cercle des poètes disparus",
+    title: "film: Le cercle des poètes disparus",
     content:
       "Et ne pas, quand viendra la vieillesse, découvrir que je n'avais pas vécu.",
   },
   {
-    title: "film la crise",
+    title: "film: la crise",
     content:
       "Pendant trente ans je vous ai torchés, nourris, couchés, levés, consolés, tous les trois... J'ai repassé vos chemises, lavé vos slips, surveillé vos études... Je me suis fait des monceaux de bile, je n'ai vécu que pour vous, qu'à travers vous... J'ai écouté toutes vos histoires, vos problèmes et vos chagrins, sans jamais vous emmerder avec les miens... Alors maintenant, je prends ma retraite.",
   },
   {
-    title: "film Pearl Harbor",
+    title: "film: Pearl Harbor",
     content:
       "S'il ne me restait qu'une nuit à vivre je voudrais la passer auprès de toi.",
   },
   {
-    title: "film La vie est belle",
+    title: "film: La vie est belle",
     content:
       'Grassouillet, je suis plutôt pas joli. Je suis jaune et l\'on me voit de loin. Si tu me demandes où je suis, je te réponds " au coin, au coin coin ". En marchant je fais caca mais très peu. Qui suis-je ?',
   },
   {
-    title: "film Eragon",
+    title: "film: Eragon",
     content:
       "- Pourquoi tu m'as choisi ? - Pour ton courage. - Mais je ne suis pas sans peur ? - Sans peur il n'y aurait pas de courage !",
   },
   {
-    title: "film Innocents - The dreamers",
+    title: "film: Innocents - The dreamers",
     content:
       "- Oui, je suis ivre. Et tu es belle. Et demain matin, je serai sobre mais tu seras toujours belle.",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content:
       "C'est seulement quand on a tout perdu qu'on est libre de faire tout ce qu'on veut.",
   },
   {
-    title: "film V pour Vendetta",
+    title: "film: V pour Vendetta",
     content:
       "On peut abandonner son intégrité pour presque rien, mais c'est tout ce que nous possédons réellement, tout ce qui nous reste à la fin. Et dans ce petit espace, nous sommes libres.",
   },
   {
-    title: "film Pulp Fiction",
+    title: "film: Pulp Fiction",
     content: "C'est à une demi-heure d'ici. J'y suis dans dix minutes.",
   },
   {
-    title: "film La cité de la peur",
+    title: "film: La cité de la peur",
     content:
       "- Parlez moi de vous plutôt. - Odile ! Moi c'est Odile ! Pluto c'est l'ami de Mickey ! - Ah non ! Pluto c'est le chien de Mickey ! L'ami de Mickey c'est Dingo !",
   },
   {
-    title: "film The Vow - Je te promets",
+    title: "film: The Vow - Je te promets",
     content:
       "- Je jure de t'aimer comme un fou, et ce à tout moment, exactement telle que tu es. Je fais le serment de ne jamais oublier que c'est un amour qu'on ne rencontre qu'une fois dans une vie et de toujours savoir au plus profond de mon âme que quelque soient les montagnes qui pourraient peut-être nous séparer, nous saurons retrouver le chemin qui nous mène à l'autre.",
   },
   {
-    title: "film Braquage à l'italienne",
+    title: "film: Braquage à l'italienne",
     content:
       "J'ai confiance en tout le monde. Ce dont je me méfie c'est du diable se trouvant en chaque homme.",
   },
   {
-    title: "film La cité de la peur",
+    title: "film: La cité de la peur",
     content:
       "- Je suis quasiment sûr que nous avons affaire à un serial killer. - Pardon ? - Je crois que nous avons affaire à un serial killer. - Un quoi ? - Un serial killer. - Un ? - Un serial killer. Un tueur en série. - Ah... Un serial killer.",
   },
   {
-    title: "film Peter Pan",
+    title: "film: Peter Pan",
     content: "Mourir doit vraiment être une belle aventure !",
   },
   {
-    title: "film OSS 117 : Le Caire nid d'espions",
+    title: "film: OSS 117 : Le Caire nid d'espions",
     content: "J'aime me beurrer la biscotte !",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content:
       "Je me sentais comme un chien qui a pissé sur la moquette et qui attend que son maître se rende compte pour recevoir sa raclée. Et un certain lundi soir, la raclée est tombée. Ca m'a fait un bien fou.",
   },
   {
-    title: "film 300",
+    title: "film: 300",
     content:
       "- Mon roi, c'est un honneur de mourir à tes côtés. - C'est un honneur d'avoir vécu aux tiens.",
   },
   {
-    title: "film Le dîner de cons",
+    title: "film: Le dîner de cons",
     content:
       "- Il s'appelle Juste Leblanc. - Ah bon, il n'a pas de prénom ?- Je viens de vous le dire Juste Leblanc. Votre prénom c'est François, c'est juste ? Eh bien lui c'est pareil, c'est Juste. - .",
   },
   {
-    title: "film Moulin rouge !",
+    title: "film: Moulin rouge !",
     content:
       "La plus grande vérité qu'on puisse apprendre un jour est qu'il suffit d'aimer et de l'être en retour.",
   },
   {
-    title: "film Batman begins",
+    title: "film: Batman begins",
     content:
       "Qui que l'on soit au fond de nous, nous ne sommes jugés que d'après nos actes.",
   },
   {
-    title: "film Million Dollar Baby",
+    title: "film: Million Dollar Baby",
     content:
       "Il y a de la magie à livrer combat au-delà de ses propres limites; c'est cette magie qui fait que l'on prend tous les risques pour un rêve qu'on est seul à connaitre.",
   },
   {
-    title: "film La famille Addams",
+    title: "film: La famille Addams",
     content:
       "C'est ça mon déguisement, je suis un fou criminel : il ressemble à n'importe qui.",
   },
   {
-    title: "film Kingdom of Heaven",
+    title: "film: Kingdom of Heaven",
     content: "Je suis comme je suis, je fais ce pourquoi je suis fait.",
   },
   {
-    title: "film La belle personne",
+    title: "film: La belle personne",
     content:
       "Je n'ai pas honte de te parler sans prudence. Je me dis que c'est ça aussi qui t'a plu chez moi, ma manière d'être transparente. Imaginer que tu puisses ne plus m'aimer est pour moi bien plus abominable que ce que tu appelles les règles que je me suis fixée. Je sais que nous sommes deux personnes, normales, quoi, et qu'après tout, nous pourrions être ensemble. Mais pour combien de temps ? Si nous sommes deux personnes comme les autres, quelle sera la durée de notre amour ? Il n'y a pas d'amour éternel, même dans les livres, il n'y en a pas. Donc s'aimer, c'est s'aimer pour un certain temps. Il n'y aura pas de miracle pour nous. Nous ne sommes pas plus forts que les autres.",
   },
   {
-    title: "film À la folie... pas du tout",
+    title: "film: À la folie... pas du tout",
     content:
       "Bien que mon amour soit fou, ma raison calme les trop vives douleurs de mon coeur en lui disant de patienter, et d'espérer toujours.",
   },
   {
-    title: "film Kung Fu Panda",
+    title: "film: Kung Fu Panda",
     content:
       "On rencontre souvent sa destinée par les chemins qu'on a pris pour l'éviter.",
   },
   {
-    title: "film Fauteuils d'orchestre",
+    title: "film: Fauteuils d'orchestre",
     content: "Un jour le temps qui passe ça devient le temps qui reste.",
   },
   {
-    title: "film RRRrrrr !!!",
+    title: "film: RRRrrrr !!!",
     content:
       "- Il était comment ? - Il était de dos. - Ok, arrêtez tous les hommes de dos que vous trouverez.",
   },
   {
-    title: "film Indiana Jones et le Temple maudit",
+    title: "film: Indiana Jones et le Temple maudit",
     content: "Indiana Jones : Eh oui, c'est mon nom d'artiste !",
   },
   {
-    title: "film Sagan",
+    title: "film: Sagan",
     content:
       "Mes amis, je ne les aimais pas parce qu'ils étaient noctambules, mais parce qu'ils étaient eux-mêmes. Je n'attendais pas d'eux qu'ils soient drôles, j'attendais d'eux qu'ils soient heureux, qu'ils soient gais. J'attendais d'eux qu'ils m'aiment. Qu'ils soient chaleureux, et que la vie soit chaude.",
   },
   {
-    title: "film Les visiteurs",
+    title: "film: Les visiteurs",
     content:
       "Je suis Godefroy Amaury De Malfète, comte de Montmirail, d'Apromont et de Papimcourt, fils d'Aldebert de Malfète  et de Thibaude de Montfaucon... Je suis ton aieul.",
   },
   {
-    title: "film Le temps d'un automne",
+    title: "film: Le temps d'un automne",
     content:
       "L'amour est toujours passion et désintéressé. Il n'est jamais jaloux. L'amour n'est ni prétentieux, ni orgueilleux. Il n'est jamais grossier, ni égoïste. Il n'est pas colérique. Et il n'est pas rancunier. L'amour ne se réjouit pas de tous les péchés d'autrui. Mais trouve sa joie dans l'infinité. Il excuse tout. Il croit tout. Il espère tout. Et endure tout. Voila ce qu'est l'amour.",
   },
   {
-    title: "film Si seulement...",
+    title: "film: Si seulement...",
     content:
       "Je t'aime depuis notre première rencontre, mais je n'ai jamais vraiment voulu me l'avouer jusqu'à aujourd'hui. J'ai toujours tout anticipé, toujours pris des décisions par crainte. Aujourd'hui, grâce à toi, grâce à ce que j'ai appris de toi... Les choix que je fais sont totalement différent, ma vie a changé. J'ai appris que c'est comme ça qu'on vit pleinement sa vie, peu importe ce qu'il nous reste à vivre, cinq petites minutes ou cinquante ans. Samantha, sans cette journée et si je ne t'avais pas connu, je n'aurais jamais su ce que c'est que l'amour. Alors je te remercie de m'avoir appris à aimer aussi fort et de m'avoir appris à recevoir.",
   },
   {
-    title: "film Sur la route de Madison",
+    title: "film: Sur la route de Madison",
     content:
       "Les matins brumeux ou les après-midi quand le soleil se reflète sur l'eau du nord-ouest, j'essaie d'imaginer où tu en es dans ta vie, ou ce que tu es en train de faire pendant que je pense à toi.",
   },
   {
-    title: "film Le bon, la brute et le truand",
+    title: "film: Le bon, la brute et le truand",
     content:
       "Dieu n'est pas avec nous et il déteste les corniauds de ton genre !",
   },
   {
-    title: "film RRRrrrr !!!",
+    title: "film: RRRrrrr !!!",
     content:
       "- Depuis que je t'ai rencontrée, je me dis que la vie vaut la peine d'être survécue ! - L'air te parait plus pur, les oiseau-mouth plus gai, c'est ça ? - Comment tu l'sais ?",
   },
   {
-    title: "film Into the wild",
+    title: "film: Into the wild",
     content:
       "- Tout le monde m'aime ici. Et j'aime tout l'monde. Je veux avoir la sagesse d'aimer tout le monde. Et je suis très heureux !- Alors vous y croyez à l'amour ? - Totalement ! Je crois qu'il y a une histoire d'amour pour chaque êtres humains de la planète.",
   },
   {
-    title: "film Les Bronzés",
+    title: "film: Les Bronzés",
     content:
       "Azur, nos bêtes sont bondées d'un cri, je m'éveille songeant aux fruits noirs de l'amibe dans sa cupule verruqueuse et tronquée. Saint-John Perse.",
   },
   {
-    title: "film La Haine",
+    title: "film: La Haine",
     content: "Le plus dur c'est pas la chute, c'est l'atterrissage.",
   },
   {
-    title: "film Pearl Harbor",
+    title: "film: Pearl Harbor",
     content:
       "- Vous êtes si belle que ça en est douloureux ! - C'est votre nez qui saigne ? - Non c'est mon coeur.",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content:
       "Maintenant nous sommes libre. Et nous nous reverrons... Mais pas encore, pas encore !",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content: "Tes fautes de fils sont mes défaillances de père.",
   },
   {
-    title: "film Tout pour plaire",
+    title: "film: Tout pour plaire",
     content:
       "- Et vous vous êtes rencontrés comment ? - À l'enterrement d'un ami commun, au moment ou le cercueil descendait dans le trou nos regards se sont croisés, et \" paf \", le coup de foudre !",
   },
   {
-    title: "film La Haine",
+    title: "film: La Haine",
     content:
       "- La majorité des flics dans la rue, ils sont pas là pour vous taper, ils sont là pour vous protéger ! - Ah ouais, et qui nous protège de vous ?",
   },
   {
-    title: "film Gladiator",
+    title: "film: Gladiator",
     content:
       "Est ce que Rome mérite la vie d'un homme de bien ? Nous l'avons cru autrefois. Il faut le croire à nouveau. Il était un soldat de Rome. Honorez le !",
   },
   {
-    title: "film Starship Troopers",
+    title: "film: Starship Troopers",
     content:
       "Allez, bande de macaques ! Si vous avez envie de vivre, battez-vous !",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content:
       "Bouche toi les oreilles. Bouche toi les oreilles fort fort fort, encore plus fort ! Tu entends comme je t'aime ?",
   },
   {
-    title: "film Fight Club",
+    title: "film: Fight Club",
     content: "Je le considère comme un impôt sur la connerie.",
   },
   {
-    title: "film Jeux d'enfants",
+    title: "film: Jeux d'enfants",
     content:
       "- Il y a que trois choses que tu ne m'as pas demandé de faire, que je regrette et j'aurais été cap... - Genre ? - Manger des fourmis, insulter les chômeurs qui sortent de l'ANPE... t'aimer comme un fou.",
   },
   {
-    title: "film Les trois frères",
+    title: "film: Les trois frères",
     content:
       "“ Elle, elle est gentille mais elle est moche. Mais toi t'es moche puis t'es con !\n<br>“ Vous avez bu Didier ! \n<br>“ Tiens t'es moins con que t'en as l'air.",
   },
   {
-    title: "film Cendrillon",
+    title: "film: Cendrillon",
     content: "Apprends à aimer les chats.",
   },
   {
-    title: "film Twilight - Chapitre 1 : fascination",
+    title: "film: Twilight - Chapitre 1 : fascination",
     content:
       "- Et voila que le lion s'est épris de l'agneau. - Comme l'agneau est stupide. - Oui et quel masochiste ce lion !",
   },
   {
-    title: "film Predator",
+    title: "film: Predator",
     content: "L'ennemi de mon ennemi est mon ami.",
   },
   {
-    title: "film La môme",
+    title: "film: La môme",
     content:
       "J'aime pas les Américains... J'suis trop triste pour eux et ils sont trop cons pour moi.",
   },
   {
-    title: "film The big Lebowski",
+    title: "film: The big Lebowski",
     content:
       "Est que j'ai l'air d'un homme marié ? La cuvette des chiottes est relevée, mec !",
   },
   {
-    title: "film Pocahontas",
+    title: "film: Pocahontas",
     content:
       "Si tu marches sur les pas d'un étranger, tu apprendras des choses que tu n'as jamais connues.",
   },
   {
-    title: "film N'oublie jamais",
+    title: "film: N'oublie jamais",
     content:
       "Ils n'étaient pas toujours d'accord, en fait ils n'étaient jamais d'accord sur rien, ils se bagarraient tout le temps et ils se testaient mutuellement mais en dépit de leurs différences ils avaient une chose très importante en commun ils étaient fou l'un de l'autre...",
   },
   {
-    title: "film Jurassic park",
+    title: "film: Jurassic park",
     content:
       "- Dieu crée les dinosaures. Dieu détruit les dinosaures. Dieu crée l'homme. L'homme détruit Dieu. L'homme crée les dinosaures. - Les dinosaures mangent l'homme. Et la femme hérite de la Terre.",
   },
   {
-    title: "film Roméo + Juliette",
+    title: "film: Roméo + Juliette",
     content:
       "J'ai le manteau de la nuit pour me dérober à leurs yeux, mais si tu ne m'aimes pas  laisse les me trouver ici. Mieux vaut perdre la vie par leur haine que d'attendre la mort sans être aimé de toi.",
   },
   {
-    title: "film Love Story",
+    title: "film: Love Story",
     content: "Aimer c'est ne jamais avoir à dire qu'on est désolé.",
   },
   {
-    title: "film Scarface",
+    title: "film: Scarface",
     content: "J'ai des mains faites pour l'or et elles sont dans la merde !",
   },
   {
-    title: "film X files",
+    title: "film: X files",
     content:
       "Les distances qui nous séparent, si lointaines et si proches à la fois, peuvent être aisément réduites, non pas par nos actes mais par nos sentiments.",
   },
   {
-    title: "film Le bon, la brute et le truand",
+    title: "film: Le bon, la brute et le truand",
     content:
       "- Dis Tuco tu aimes ça la musique ? - La musique ? Ah oui j'aime ça, surtout après un bon déjeuner.",
   },
   {
-    title: "film The crow",
+    title: "film: The crow",
     content:
       'Regarde-toi ! " Maman " est le premier nom de Dieu dans la bouche de tous les enfants.',
   },

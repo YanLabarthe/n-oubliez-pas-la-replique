@@ -36,6 +36,16 @@ export default function ChatContainer({ alias, onFinished }) {
     },
   ]);
 
+  const handleclick = () => {
+    setMessageList([
+      ...messageList,
+      {
+        name: "batman",
+        message: cryptedQuote(api[quoteIndex].title, wordToGuess),
+      },
+    ]);
+  };
+
   // win&losestreack counter
   let winstreak = 0;
   let losestreak = 0;
@@ -145,7 +155,13 @@ export default function ChatContainer({ alias, onFinished }) {
           )}
 
           <div className="flex">
-            <span className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2">
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={handleclick}
+              onKeyDown={handleclick}
+              className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2"
+            >
               <svg
                 viewBox="0 0 20 20"
                 className="w-full h-full fill-current text-amber-500"
