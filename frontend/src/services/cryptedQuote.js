@@ -32,12 +32,21 @@ export const randomWord = (quote) => {
 };
 
 // Fonction pour crypter une citation avec le mot qui a été retiré aléatoirement
-export const cryptedQuote = (quote, cryptedWord) => {
+export const cryptedQuote = (quote, cryptedWord, binary) => {
   let cryptage = "_";
-
-  for (let i = 1; i < cryptedWord.length; i++) {
-    cryptage += " _ ";
+  if (binary == 1) {
+    for (let i = 1; i < cryptedWord.length; i++) {
+      if (i % 2 !== 0) {
+        cryptage += " "+cryptedWord[i];
+      } else {
+        cryptage += " _";
+      }
+    }
+    return quote.replace(cryptedWord, cryptage);
+  } else {
+    for (let i = 1; i < cryptedWord.length; i++) {
+      cryptage += " _";
+    }
+    return quote.replace(cryptedWord, cryptage);
   }
-
-  return quote.replace(cryptedWord, cryptage);
 };
