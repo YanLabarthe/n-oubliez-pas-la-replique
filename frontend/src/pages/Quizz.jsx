@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import batFaceData from "@assets/batFaceData";
 import { cryptedQuote, randomWord } from "@services/cryptedQuote";
 import sendAnswerButton from "@assets/img/send.png";
@@ -36,6 +36,8 @@ export default function Quizz({ alias, onFinished }) {
 
   // set's the face of batman depending if the user answer is good or bad
   const [batFace, setBatFace] = useState(batFaceData.neutral);
+
+  const endMessagesRef = useRef(null);
 
   const getTitleQuote = () => {
     setMessageList([
@@ -82,6 +84,10 @@ export default function Quizz({ alias, onFinished }) {
   const onGameEnd = () => {
     setTimerEnded(true);
   };
+
+  useEffect(() => {
+    endMessagesRef.current?.scrollIntoView();
+  }, [messageList]);
 
   // function that gives some letters in the word to guess
   const needHelp = () => {
@@ -190,11 +196,11 @@ export default function Quizz({ alias, onFinished }) {
   // after the database of quotes is loaded
   return (
     <>
-      <h3>{alias}</h3>
-      <h4>
-        SCORE : {score} / {wordToGuess}
-      </h4>
-      <div className="border-amber-100">
+      <span className="bg-yellow-500  text-2xl text-neutral-900 rounded-full p-10 py-2 ml-4">
+        {alias} ---- SCORE : {score} ---- {wordToGuess}
+      </span>
+
+      <div className="m-0 flex flex-col max-h-screen w-full  border-amber-100">
         {/* ------- Header du Chat / là où s'affiche le statut de Batman------- */}
         <div className="px-6 py-4 flex flex-row flex-none justify-between items-center shadow bg-amber-400">
           <div className="flex">
@@ -208,7 +214,7 @@ export default function Quizz({ alias, onFinished }) {
           </div>
 
           {!timerEnded && (
-            <h3 className="bg-black  rounded-full p-3">
+            <h3 className="bg-neutral-900  rounded-full p-3">
               <Timer duration={20} onFinished={onGameEnd} />
             </h3>
           )}
@@ -218,7 +224,7 @@ export default function Quizz({ alias, onFinished }) {
               type="button"
               disabled={timerEnded}
               onClick={getTitleQuote}
-              className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2"
+              className="block cursor-pointer rounded-full hover:bg-gray-700 bg-neutral-900 w-10 h-10 p-2"
             >
               <svg
                 viewBox="0 0 20 20"
@@ -227,7 +233,7 @@ export default function Quizz({ alias, onFinished }) {
                 <path d="M11.1735916,16.8264084 C7.57463481,15.3079672 4.69203285,12.4253652 3.17359164,8.82640836 L5.29408795,6.70591205 C5.68612671,6.31387329 6,5.55641359 6,5.00922203 L6,0.990777969 C6,0.45097518 5.55237094,3.33066907e-16 5.00019251,3.33066907e-16 L1.65110039,3.33066907e-16 L1.00214643,8.96910337e-16 C0.448676237,1.13735153e-15 -1.05725384e-09,0.445916468 -7.33736e-10,1.00108627 C-7.33736e-10,1.00108627 -3.44283713e-14,1.97634814 -3.44283713e-14,3 C-3.44283713e-14,12.3888407 7.61115925,20 17,20 C18.0236519,20 18.9989137,20 18.9989137,20 C19.5517984,20 20,19.5565264 20,18.9978536 L20,18.3488996 L20,14.9998075 C20,14.4476291 19.5490248,14 19.009222,14 L14.990778,14 C14.4435864,14 13.6861267,14.3138733 13.2940879,14.7059121 L11.1735916,16.8264084 Z" />
               </svg>
             </button>
-            <span className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2 ml-4">
+            <span className="block cursor-pointer rounded-full hover:bg-gray-700 bg-neutral-900 w-10 h-10 p-2 ml-4">
               <svg
                 viewBox="0 0 20 20"
                 className="w-full h-full fill-current text-amber-500"
@@ -242,7 +248,7 @@ export default function Quizz({ alias, onFinished }) {
               onClick={() => {
                 needHelp();
               }}
-              className="block cursor-pointer rounded-full hover:bg-gray-700 bg-black w-10 h-10 p-2 ml-4"
+              className="block cursor-pointer rounded-full hover:bg-gray-700 bg-neutral-900 w-10 h-10 p-2 ml-4"
             >
               <svg
                 viewBox="0 0 20 20"
@@ -255,7 +261,7 @@ export default function Quizz({ alias, onFinished }) {
         </div>
         {/* ------- Body du Chat / là intègre les citations et les réponses ------- */}
 
-        <div className="p-4 flex-1 max-h-70 overflow-y-scroll ">
+        <div className="chat_body p-4 flex-1 overflow-y-scroll text-neutral-900">
           {messageList.map((mess) => (
             <>
               {mess.name === "user" && (
@@ -275,6 +281,7 @@ export default function Quizz({ alias, onFinished }) {
               )}
             </>
           ))}
+          <div ref={endMessagesRef} />
         </div>
 
         {/* ------- Footer du Chat / là où on tape sa réponse ------- */}
@@ -361,7 +368,7 @@ export default function Quizz({ alias, onFinished }) {
 
       {timerEnded && (
         <Link
-          className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
+          className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-neutral-900 py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
           to="/scoreboard"
         >
           Scoreboard

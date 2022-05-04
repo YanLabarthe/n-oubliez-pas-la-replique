@@ -1,5 +1,3 @@
-import "@components/ChatContainer.css";
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "@pages/Home";
 import Quizz from "@pages/Quizz";
@@ -13,7 +11,7 @@ function App() {
 
   const generateName = () => {
     const newName = nameGenerator();
-    return setNameGenerated(newName);
+    setNameGenerated(newName);
   };
 
   const onGameEnd = (theScore) => {
@@ -21,7 +19,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App min-h-screen text-center bg-neutral-900 text-yellow-500">
       <Routes>
         <Route
           path="/"

@@ -4,42 +4,39 @@ import { Link } from "react-router-dom";
 
 function Scoreboard({ name, score }) {
   return (
-    <>
-      <link
-        href="https://fr.allfont.net/allfont.css?fonts=star-jedi"
-        rel="stylesheet"
-        type="text/css"
-      />
+    <div className="flex flex-col w-full">
       <h1>ScoreBoard</h1>
-      <div className="batman">
-        <img src="/src/assets/img/batmanCoverPage.jpeg" alt="batman" id="App" />
+
+      <div className="batman flex justify-center p-20">
+        <img src="/src/assets/img/batmanCoverPage.jpeg" alt="batman" />
       </div>
 
-      <div>
-        <div className="grid">
-          <div className="head">Pseudo</div>
-          <div className="head">Scores</div>
-          <div>CrazyTiger</div>
-          <div>4500 points</div>
-          <div>AngryTaurus</div>
-          <div>4000 points</div>
-          <div>oldDog</div>
-          <div>3500 points</div>
-          <div>{name}</div>
-          <div>{score}</div>
-          <div>...</div>
-          <div>...</div>
-          <div>...</div>
-          <div>...</div>
-        </div>
+      <div className="grid">
+        <div className="head text-xl">Pseudo</div>
+        <div className="head text-xl">Scores</div>
+        <div>CrazyTiger</div>
+        <div>4500 points</div>
+        <div>AngryTaurus</div>
+        <div>4000 points</div>
+        <div>oldDog</div>
+        <div>3500 points</div>
+        <div>{name}</div>
+        <div>{score} points</div>
+        <div>...</div>
+        <div>...</div>
+        <div>...</div>
+        <div>...</div>
+      </div>
+
+      <div className="flex justify-center p-20">
         <Link
-          className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
+          className="flex items-center justify-center group w-fit overflow-hidden px-8 h-24 border hover:bg-yellow-500 hover:text-black font-semibold border-yellow-500 rounded"
           to="/quizz"
         >
-          Play
+          Replay
         </Link>
       </div>
-    </>
+    </div>
   );
 }
 

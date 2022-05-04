@@ -1,40 +1,87 @@
+import { useState } from "react";
 import RandomAlias from "@components/RandomAlias";
-import { Link } from "react-router-dom";
-import bulle from "@assets/img/batmanBul.png";
-import "./Home.css";
+
+import bulle from "@assets/img/batman.png";
+import "./speechBubble.css";
 
 function Home({ name, onNameGenerated }) {
+  const [bubbleClasses, setBubbleClasses] = useState("speech-bubble-hide");
+
   return (
-    <div className="w-full flex flex-col justify-center items-center ">
-      <h1 className="font-bold text-3xl text-yellow-500 mt-0.5 md:text-2xl">
-        N'oubliez pas la réplique
-      </h1>
+    <div className="h-screen flex flex-col justify-between items-center text-6xl">
+      <h1 className="pt-24 text-5xl sm:text-7xl">N'oubliez pas la réplique</h1>
 
-      <img
-        className="mx-auto my-[10%] w-[80%]  mt-[0]"
-        src={bulle}
-        alt="batmancover"
-      />
+      <div className="relative">
+        <img
+          className="max-w-sm w-full sm:max-w-md"
+          src={bulle}
+          alt="batmancover"
+          onMouseOver={() => setBubbleClasses("speech-bubble-show")}
+          onMouseOut={() => setBubbleClasses("speech-bubble-hide")}
+          onBlur={() => setBubbleClasses("speech-bubble-hide")}
+          onFocus={() => setBubbleClasses("speech-bubble-show")}
+        />
 
-      <RandomAlias alias={name} />
+        <div
+          className={`hidden sm:absolute sm:block speech-bubble ${bubbleClasses}`}
+        >
+          I'm a batman
+        </div>
+      </div>
+
       <button
         type="button"
-        className="bg-yellow-500 hover:bg-yellow-400 border-b-4 border-yellow-700 hover:border-yellow-500 text-white text-center py-2 px-4 rounded"
         onClick={onNameGenerated}
+        className={`relative group w-fit overflow-hidden px-8 h-24 ${
+          name === "" ? "visibility: visible" : "visibility : hidden"
+        } border hover:bg-yellow-500 hover:text-black font-semibold border-yellow-500 rounded`}
       >
-        Generate your alias
+        <div
+          aria-hidden="true"
+          className="transition w-fit duration-300 group-hover:-translate-y-24"
+        >
+          <div className="h-24 flex w-fit items-center justify-center">
+            <span className="text-4xl text-center">Put on your mask</span>
+          </div>
+
+          <div className="h-24 flex w-fit items-center justify-center">
+            <span className="text-4xl">Chose your alias</span>
+          </div>
+        </div>
       </button>
 
-      <div>
-        <Link
-          className="mx-auto my-2 flex w-[30%] justify-center content-center bg-transparent hover:bg-yellow-500 text-white-700 font-semibold hover:text-white p-4  border border-blue-500 hover:border-transparent rounded"
-          to="/quizz"
-        >
-          Start
-        </Link>
-      </div>
+      <RandomAlias alias={name} />
     </div>
   );
 }
 
 export default Home;
+
+/*   var rectangle = $("#Rectangle");
+var speechBubble = $("#SpeechBubble");
+
+  rectangle.hover(
+    function () {
+      speechBubble.css({
+        "animation-name": "expand-bounce",
+        "animation-duration": "0.25s",
+      });
+    },
+    function () {
+      speechBubble.css({
+        "animation-name": "shrink",
+        "animation-duration": "0.1s",
+      });
+    }
+  ); */
+
+/*       <button
+        type="button"
+        className={`my-2 w-fit justify-center content-center bg-transparent hover:bg-yellow-500 text-white-700 font-semibold ${
+          name === "" ? "visibility: visible" : "visibility : hidden"
+        } hover:text-white p-4 border border-yellow-500 hover:border-transparent rounded`}
+        onClick={onNameGenerated}
+      >
+        Put on your mask
+      </button>
+       */

@@ -1,0 +1,131 @@
+@media screen and (min-width: 1280px) {
+  .speech-bubble {
+    position: absolute;
+    transform-origin: 0% 100%;
+    text-align: center;
+    background-color: #f8c716;
+    color: black;
+    border-radius: 10px;
+    border: solid #ca8a04;
+    padding: 10px;
+    right: -300px;
+    top: -75px;
+    transform: scale(0);
+    animation-fill-mode: forwards;
+  }
+  .speech-bubble::before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    bottom: -30px;
+    left: -8 px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #ca8a04 transparent transparent #ca8a04;
+    transform: rotate(0deg);
+  }
+
+  .speech-bubble-show {
+    animation-name: expand-bounce;
+    animation-duration: 0.25s;
+  }
+
+  .speech-bubble-hide {
+    animation-name: shrink;
+    animation-duration: 0.1s;
+  }
+
+  /* Here the scale changes from 0 to 1. To add the bounciness 
+effect, the scale is set to 1.25 midway through the animation
+to give the animation a nicer effect. */
+  @keyframes expand-bounce {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Here the scale simply goes from 1 back to 0 */
+  @keyframes shrink {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+  .speech-bubble {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform-origin: 0% 100%;
+    text-align: center;
+    background-color: #f8c716;
+    color: black;
+    border-radius: 10px;
+    border: solid #ca8a04;
+    padding: 0.625rem;
+    top: -8rem;
+    transform: scale(0);
+    animation-fill-mode: forwards;
+  }
+  .speech-bubble::before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    bottom: -2rem;
+    right: 1rem;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #ca8a04 transparent transparent #ca8a04;
+    transform: rotate(2deg);
+  }
+
+  .speech-bubble-show {
+    animation-name: expand-bounce;
+    animation-duration: 0.25s;
+  }
+
+  .speech-bubble-hide {
+    animation-name: shrink;
+    animation-duration: 0.1s;
+  }
+
+  /* Here the scale changes from 0 to 1. To add the bounciness 
+  effect, the scale is set to 1.25 midway through the animation
+  to give the animation a nicer effect. */
+  @keyframes expand-bounce {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Here the scale simply goes from 1 back to 0 */
+  @keyframes shrink {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}

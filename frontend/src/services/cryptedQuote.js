@@ -37,7 +37,7 @@ export const cryptedQuote = (quote, cryptedWord, binary) => {
   if (binary == 1) {
     for (let i = 1; i < cryptedWord.length; i++) {
       if (i % 2 !== 0) {
-        cryptage += " "+cryptedWord[i];
+        cryptage += " " + cryptedWord[i];
       } else {
         cryptage += " _";
       }
