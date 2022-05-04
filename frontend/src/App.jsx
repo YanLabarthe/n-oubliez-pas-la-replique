@@ -4,6 +4,7 @@ import Quizz from "@pages/Quizz";
 import Scoreboard from "@pages/Scoreboard";
 import nameGenerator from "@services/nameGenerator";
 import { useState } from "react";
+import { addScore } from "@services/api";
 
 function App() {
   const [nameGenerated, setNameGenerated] = useState("");
@@ -16,6 +17,7 @@ function App() {
 
   const onGameEnd = (theScore) => {
     setScore(theScore);
+    addScore(nameGenerated, theScore);
   };
 
   return (

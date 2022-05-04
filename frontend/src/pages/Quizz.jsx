@@ -8,13 +8,11 @@ import BatmanAnswer from "@components/BatmanAnswer";
 import Timer from "@components/Timer";
 import { Link } from "react-router-dom";
 import getRandomQuoteIndex from "@services/randomQuoteIndex";
+import { getQuotes } from "@services/api";
 
 export default function Quizz({ alias, onFinished }) {
   // contains all the quotes after import
   const [api, setApi] = useState([]);
-
-  // shows a loader during the import of all the quotes from MySQL
-  const [isLoading, setIsLoading] = useState(true);
 
   // contains the current word you have to guess from the crypted quote
   const [wordToGuess, setWordToGuess] = useState();
@@ -39,6 +37,42 @@ export default function Quizz({ alias, onFinished }) {
 
   const endMessagesRef = useRef(null);
 
+  // imports all the quotes from MySQL and initialize all the values of the first crypted quote
+  useEffect(async () => {
+    const newApi = await getQuotes();
+    setApi(newApi);
+
+    const newQuoteIndex = getRandomQuoteIndex(newApi.length);
+    const firstWordToGuess = randomWord(newApi[newQuoteIndex].content);
+
+    setMessageList([
+      {
+        name: "batman",
+        message: cryptedQuote(newApi[newQuoteIndex].content, firstWordToGuess),
+      },
+    ]);
+
+    setQuoteIndex(newQuoteIndex);
+    setWordToGuess(firstWordToGuess);
+  }, []);
+
+  // Tracks the score value so we can transfer it from here to the App page (we didn't succeed to have the score value one the App page without that useEffect)
+  useEffect(() => {
+    if (timerEnded) {
+      onFinished(score);
+    }
+  }, [timerEnded]);
+
+  const onGameEnd = () => {
+    setTimerEnded(true);
+    endMessagesRef.current?.scrollIntoView();
+  };
+
+  useEffect(() => {
+    endMessagesRef.current?.scrollIntoView();
+  }, [messageList]);
+
+  // function that gives the title of the movie
   const getTitleQuote = () => {
     setMessageList([
       ...messageList,
@@ -48,46 +82,6 @@ export default function Quizz({ alias, onFinished }) {
       },
     ]);
   };
-
-  // imports all the quotes from MySQL and initialize all the values of the first crypted quote
-  useEffect(() => {
-    fetch("http://localhost:5000/quotes")
-      .then((response) => response.json())
-      .then((data) => {
-        const newQuoteIndex = getRandomQuoteIndex(data.length);
-
-        setApi(data);
-
-        setMessageList([
-          {
-            name: "batman",
-            message: cryptedQuote(
-              data[newQuoteIndex].content,
-              randomWord(data[newQuoteIndex].content)
-            ),
-          },
-        ]);
-
-        setQuoteIndex(newQuoteIndex);
-        setWordToGuess(randomWord(data[newQuoteIndex].content));
-        setIsLoading(false);
-      });
-  }, []);
-
-  //
-  useEffect(() => {
-    if (timerEnded) {
-      onFinished(score);
-    }
-  }, [timerEnded]);
-
-  const onGameEnd = () => {
-    setTimerEnded(true);
-  };
-
-  useEffect(() => {
-    endMessagesRef.current?.scrollIntoView();
-  }, [messageList]);
 
   // function that gives some letters in the word to guess
   const needHelp = () => {
@@ -180,18 +174,13 @@ export default function Quizz({ alias, onFinished }) {
         name: "batman",
         message: cryptedQuote(
           api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
-          newWordToGuess
+          isGoodResponse ? newWordToGuess : wordToGuess
         ),
       },
     ]);
 
     setUserMessage("");
   };
-
-  // if the database of quotes is loading
-  if (isLoading) {
-    return <p>Batman se prépare ...</p>;
-  }
 
   // after the database of quotes is loaded
   return (
@@ -259,7 +248,6 @@ export default function Quizz({ alias, onFinished }) {
             </button>
           </div>
         </div>
-        {/* ------- Body du Chat / là intègre les citations et les réponses ------- */}
 
         <div className="chat_body p-4 flex-1 overflow-y-scroll text-neutral-900">
           {messageList.map((mess) => (
@@ -364,6 +352,23 @@ export default function Quizz({ alias, onFinished }) {
             </button>
           </div>
         </div>
+        <button
+          title="réponse"
+          type="button"
+          disabled={timerEnded}
+          onClick={() => {
+            needAnswer();
+          }}
+          className="cursor-pointer flex flex-shrink-0 focus:outline-none mx-2 block text-amber-300 hover:text-amber-600 w-6 h-6"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            transform="rotate(180)"
+            className="w-full h-full fill-current"
+          >
+            <path d="M11.0010436,0 C9.89589787,0 9.00000024,0.886706352 9.0000002,1.99810135 L9,8 L1.9973917,8 C0.894262725,8 0,8.88772964 0,10 L0,12 L2.29663334,18.1243554 C2.68509206,19.1602453 3.90195042,20 5.00853025,20 L12.9914698,20 C14.1007504,20 15,19.1125667 15,18.000385 L15,10 L12,3 L12,0 L11.0010436,0 L11.0010436,0 Z M17,10 L20,10 L20,20 L17,20 L17,10 L17,10 Z" />
+          </svg>
+        </button>
       </div>
 
       {timerEnded && (

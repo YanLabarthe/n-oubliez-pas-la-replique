@@ -1,7 +1,10 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
-const QuotesController = require("./controllers/QuotesController");
+const {
+  ItemController,
+  QuotesController,
+  ScoresController,
+} = require("./controllers");
 
 const router = express.Router();
 
@@ -12,5 +15,8 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.get("/quotes", QuotesController.browse);
+
+router.get("/scores", ScoresController.browse);
+router.post("/scores", ScoresController.add);
 
 module.exports = router;
