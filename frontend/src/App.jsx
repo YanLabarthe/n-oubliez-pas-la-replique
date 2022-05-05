@@ -9,15 +9,18 @@ import { addScore } from "@services/api";
 function App() {
   const [nameGenerated, setNameGenerated] = useState("");
   const [score, setScore] = useState(0);
+  const [theRank, setTheRank] = useState("");
 
   const generateName = () => {
     const newName = nameGenerator();
     setNameGenerated(newName);
   };
 
-  const onGameEnd = (theScore) => {
+  const onGameEnd = async (theScore) => {
     setScore(theScore);
-    addScore(nameGenerated, theScore);
+
+    const rank = await addScore(nameGenerated, theScore);
+    setTheRank(rank[0].myrank);
   };
 
   return (
@@ -33,7 +36,9 @@ function App() {
         />
         <Route
           path="/scoreboard"
-          element={<Scoreboard name={nameGenerated} score={score} />}
+          element={
+            <Scoreboard name={nameGenerated} score={score} rank={theRank} />
+          }
         />
       </Routes>
     </div>

@@ -51,20 +51,18 @@ class ScoresController {
       });
   };
 
-  static add = (req, res) => {
+  static add = async (req, res) => {
     const { username, score } = req.body;
 
     // TODO validations (length, format...)
-
-    models.scores
-      .insert(username, score)
-      .then(([result]) => {
-        res.status(201).send(result);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    try {
+      const [result] = await models.scores.insert(username, score);
+      const [rank] = await models.scores.findYourRank(result.insertId);
+      res.status(201).send(rank);
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
   };
 
   static delete = (req, res) => {

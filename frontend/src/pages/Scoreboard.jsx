@@ -3,7 +3,7 @@ import "./Scoreboard.css";
 import { Link } from "react-router-dom";
 import { getScores } from "@services/api";
 
-function Scoreboard() {
+function Scoreboard({ rank }) {
   const [score, setScore] = useState([]);
 
   useEffect(async () => {
@@ -31,6 +31,8 @@ function Scoreboard() {
           ))}
         </div>
       </div>
+      <div>Your rank is :{rank}</div>
+
       <Link
         className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
         to="/quizz"

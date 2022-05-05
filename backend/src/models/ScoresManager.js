@@ -16,6 +16,13 @@ class ScoresManager extends AbstractManager {
       [username, score]
     );
   }
+
+  findYourRank(scoreId) {
+    return this.connection.query(
+      `SELECT myrank FROM (SELECT *, RANK() OVER(ORDER by score DESC) myrank FROM ${this.table}) as ranking WHERE id = ?`,
+      [scoreId]
+    );
+  }
 }
 
 module.exports = ScoresManager;
