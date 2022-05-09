@@ -10,33 +10,44 @@ function Scoreboard({ rank }) {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
-      <h1>ScoreBoard</h1>
-
-      <div className="batman flex justify-center p-20">
-        <img src="/src/assets/img/batmanCoverPage.jpeg" alt="batman" />
+    <div className="flex flex-col w-full border-amber-500 ">
+      <h1 className="py-4 text-3xl sm:text-5x">ScoreBoard</h1>
+      <div className="p-3 flex mx-auto">
+        Ton classement :<h3 className="text-2xl px-2">{rank}</h3>ème
       </div>
       <div className="mx-auto flex w-2/3">
-        <div className="myGrid flex flex-col w-1/2">
-          <div className="head">Pseudo</div>
+        <div className="flex flex-col w-1/2">
+          <div className=" bg-amber-400 p-2">
+            <h3 className="text-black">Pseudo</h3>
+          </div>
           {score.map((user) => (
-            <div key={user.id}>{user.username}</div>
+            <div
+              className="border-amber-500 border-b p-2 font-semibold"
+              key={user.id}
+            >
+              {user.username}
+            </div>
           ))}
         </div>
-        <div className="myGrid flex flex-col w-1/2">
-          <div className="head">Scores</div>
+        <div className="border-amber-500 flex flex-col w-1/2">
+          <div className="bg-amber-400 p-2">
+            <h3 className="text-black">Scores</h3>
+          </div>
           {score.map((user) => (
-            <div key={user.id}>{user.score}</div>
+            <div
+              className="border-amber-500 border-b p-2 font-semibold"
+              key={user.id}
+            >
+              {user.score}
+            </div>
           ))}
         </div>
       </div>
-      <div>Your rank is :{rank}</div>
-
       <Link
         className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
         to="/quizz"
       >
-        Play
+        Play again
       </Link>
       <div />
     </div>

@@ -10,28 +10,29 @@ function Home({ name, onNameGenerated }) {
   return (
     <div className="h-screen flex flex-col justify-between items-center text-3xl sm:text-6xl">
       {/* ----------Header - nom du site ----------- */}
-      <h1 className="pt-5 text-2xl sm:text-5xl">N'oubliez pas la réplique</h1>
+      <h1 className="py-4 text-2xl sm:text-5xl tracking-wide">
+        N'oubliez pas la réplique
+      </h1>
       {/* ----------Body - image et pop up bubble ----------- */}
-      <div className="relative grow overflow-hidden">
-        <div className="max-h-fit">
-          <img
-            className="w-auto mx-0"
-            src={bulle}
-            alt="batmancover"
-            onMouseOver={() => setBubbleClasses("speech-bubble-show")}
-            onMouseOut={() => setBubbleClasses("speech-bubble-hide")}
-            onBlur={() => setBubbleClasses("speech-bubble-hide")}
-            onFocus={() => setBubbleClasses("speech-bubble-show")}
-          />
-        </div>
+      <div className="relative flex justify-center items-center grow overflow-hidden">
+        <img
+          className="h-auto mx-auto w-3/6"
+          src={bulle}
+          alt="batmancover"
+          onMouseOver={() => setBubbleClasses("speech-bubble-show")}
+          onMouseOut={() => setBubbleClasses("speech-bubble-hide")}
+          onBlur={() => setBubbleClasses("speech-bubble-hide")}
+          onFocus={() => setBubbleClasses("speech-bubble-show")}
+        />
+
         <div
           className={`hidden sm:absolute sm:flex speech-bubble ${bubbleClasses}`}
         >
-          I'm a batman
+          I'm batman
         </div>
       </div>
       {/* ----------Footer - onClick=>RandomAliasVisible----------- */}
-      <div className="">
+      <div className="pb-2">
         <button
           type="button"
           onClick={onNameGenerated}
@@ -45,17 +46,21 @@ function Home({ name, onNameGenerated }) {
           >
             <div className="h-10 sm:h-24 flex w-fit items-center justify-center">
               <span className="text-lg sm:text-4xl text-center">
-                Put on your mask
+                <h3>Put on your mask</h3>
               </span>
             </div>
 
             <div className="h-10  sm:h-24 flex w-fit items-center justify-center">
-              <span className="text-lg sm:text-4xl">Chose your alias</span>
+              <span className="text-lg sm:text-4xl tracking-wide">
+                <h3 className="tracking-wider">Chose your alias</h3>
+              </span>
             </div>
           </div>
         </button>
         <div className="flex  sm:pb-10">
-          <RandomAlias alias={name} />
+          <h3 className="tracking-wide">
+            <RandomAlias alias={name} />
+          </h3>
         </div>
       </div>
     </div>

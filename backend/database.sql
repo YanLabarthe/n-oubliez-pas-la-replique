@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `scores`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `scores` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL DEFAULT "KNOWN",
   `score` int,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3446 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -15,6 +15,7 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.get("/quotes", QuotesController.browse);
+router.get("/quotes/findfour", QuotesController.findFour);
 
 router.get("/scores", ScoresController.browse);
 router.post("/scores", ScoresController.add);

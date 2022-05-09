@@ -1,4 +1,4 @@
-const batFaceData = {
+const batFaceImg = {
   neutral: {
     src: "https://i.ibb.co/VjpKVVM/bat-Neutre.png",
     alt: "batman",
@@ -33,4 +33,4 @@ const batFaceData = {
   },
 };
 
-export default batFaceData;
+export default batFaceImg;

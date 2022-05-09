@@ -2,9 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Home from "@pages/Home";
 import Quizz from "@pages/Quizz";
 import Scoreboard from "@pages/Scoreboard";
+import MovieQuizz from "@pages/MovieQuizz";
 import nameGenerator from "@services/nameGenerator";
 import { useState } from "react";
 import { addScore } from "@services/api";
+import "../index.css";
 
 function App() {
   const [nameGenerated, setNameGenerated] = useState("");
@@ -18,13 +20,12 @@ function App() {
 
   const onGameEnd = async (theScore) => {
     setScore(theScore);
-
-    const rank = await addScore(nameGenerated, theScore);
+    const rank = await addScore(nameGenerated || "unknown", theScore);
     setTheRank(rank[0].myrank);
   };
 
   return (
-    <div className="App min-h-screen text-center bg-neutral-900 text-yellow-500">
+    <div className="App h-screen text-center bg-neutral-900 text-yellow-500">
       <Routes>
         <Route
           path="/"
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/quizz"
           element={<Quizz alias={nameGenerated} onFinished={onGameEnd} />}
+        />
+        <Route
+          path="/moviequizz"
+          element={<MovieQuizz alias={nameGenerated} onFinished={onGameEnd} />}
         />
         <Route
           path="/scoreboard"

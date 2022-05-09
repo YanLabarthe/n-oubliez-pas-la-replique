@@ -13,3 +13,7 @@ export const addScore = async (username, score) => {
 export const getQuotes = async () => {
   return (await axios.get(`${URL_API}/quotes`)).data;
 };
+
+export const getFourAnswers = async () => {
+  return (await axios.get(`${URL_API}/quotes/findfour`)).data;
+};

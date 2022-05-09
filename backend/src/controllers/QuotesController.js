@@ -29,6 +29,18 @@ class QuotesController {
       });
   };
 
+  static findFour = (req, res) => {
+    models.quotes
+      .findFour()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static edit = (req, res) => {
     const quote = req.body;
 
