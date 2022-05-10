@@ -222,25 +222,62 @@ export default function Quizz({ alias, onFinished }) {
         )}
 
         <div className="flex p-4">
-          <button
-            type="button"
-            disabled={timerEnded}
-            onClick={getTitleQuote}
-            className="block cursor-pointer rounded-full text-amber-500 hover:border-2 hover:border-neutral-900 hover:bg-amber-500 hover:text-neutral-900 bg-neutral-900 w-12 h-10 p-2"
-          >
-            <h3 className="w-full h-full fill-current">Titre</h3>
-          </button>
-          <button
-            title="donne certaines lettres du mot"
-            type="button"
-            disabled={timerEnded}
-            onClick={() => {
-              needHelp();
-            }}
-            className="flex items-center justify-center cursor-pointer rounded-full text-amber-500 hover:border-2 hover:border-neutral-900 hover:bg-amber-500 hover:text-neutral-900 bg-neutral-900 w-12 h-10 p-2 ml-4"
-          >
-            <h3>lettre</h3>
-          </button>
+          <div>
+            <button
+              type="button"
+              disabled={timerEnded}
+              onClick={getTitleQuote}
+              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </button>
+            <h3 className="w-full h-full fill-current text-black ml-2">
+              titre
+            </h3>
+          </div>
+
+          <div>
+            <button
+              title="donne certaines lettres du mot"
+              type="button"
+              disabled={timerEnded}
+              onClick={() => {
+                needHelp();
+              }}
+              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </button>
+            <h3 className="w-full h-full fill-current text-black ml-2 ">
+              Aide
+            </h3>
+          </div>
         </div>
       </div>
       {/* ------- Body du Chat ------- */}
@@ -323,7 +360,7 @@ export default function Quizz({ alias, onFinished }) {
             <svg
               viewBox="0 0 20 20"
               transform="rotate(180)"
-              className="w-full h-full fill-current"
+              className="w-full h-full fill-current animate-waving-hand"
             >
               <path d="M11.0010436,0 C9.89589787,0 9.00000024,0.886706352 9.0000002,1.99810135 L9,8 L1.9973917,8 C0.894262725,8 0,8.88772964 0,10 L0,12 L2.29663334,18.1243554 C2.68509206,19.1602453 3.90195042,20 5.00853025,20 L12.9914698,20 C14.1007504,20 15,19.1125667 15,18.000385 L15,10 L12,3 L12,0 L11.0010436,0 L11.0010436,0 Z M17,10 L20,10 L20,20 L17,20 L17,10 L17,10 Z" />
             </svg>
