@@ -9,7 +9,8 @@ import Timer from "@components/Timer";
 import { Link } from "react-router-dom";
 import getRandomQuoteIndex from "@services/randomQuoteIndex";
 import { getQuotes } from "@services/api";
-import TypingAnimation from "@components/TypingAnimation";
+import TypingAnimationLeft from "@components/TypingAnimationLeft";
+import TypingAnimationRight from "@components/TypingAnimationRight";
 
 export default function Quizz({ alias, onFinished }) {
   // contains all the quotes after import
@@ -34,9 +35,11 @@ export default function Quizz({ alias, onFinished }) {
   const [messageList, setMessageList] = useState([]);
 
   // set's the face of batman depending if the user answer is good or bad
-  const [batFace, setBatFace] = useState(batFaceImg.neutral);
+  const [batFace, setBatFace] = useState("");
 
-  const [isTyping, setIsTyping] = useState(false);
+  const [isTypingLeft, setIsTypingLeft] = useState(false);
+
+  const [isTypingRight, setIsTypingRith] = useState(false);
 
   const endMessagesRef = useRef(null);
 
@@ -56,6 +59,7 @@ export default function Quizz({ alias, onFinished }) {
     ]);
     setQuoteIndex(newQuoteIndex);
     setWordToGuess(firstWordToGuess);
+    setBatFace(batFaceImg.neutral);
   }, []);
 
   // Tracks the score value so we can transfer it from here to the App page (we didn't succeed to have the score value one the App page without that useEffect)
@@ -116,6 +120,16 @@ export default function Quizz({ alias, onFinished }) {
     ]);
   };
 
+  const inputAction = (e) => {
+    if (e.target.value !== "") {
+      setIsTypingRith(true);
+    } else {
+      setIsTypingRith(false);
+    }
+    setUserMessage(e.target.value);
+    endMessagesRef.current?.scrollIntoView();
+  };
+
   // function launched after a answer is sent by the user
   const action = (event) => {
     event.preventDefault();
@@ -172,7 +186,7 @@ export default function Quizz({ alias, onFinished }) {
 
       setMessageList([...messageList, userResponse]);
 
-      setIsTyping(true);
+      setIsTypingLeft(true);
 
       setTimeout(() => {
         setMessageList([...messageList, userResponse, batmanResponse]);
@@ -191,7 +205,7 @@ export default function Quizz({ alias, onFinished }) {
             ),
           },
         ]);
-        setIsTyping(false);
+        setIsTypingLeft(false);
       }, 2500);
 
       setUserMessage("");
@@ -202,6 +216,7 @@ export default function Quizz({ alias, onFinished }) {
   return (
     <div className="m-0 flex flex-col h-screen w-full border-amber-100 overflow-hidden shadow-lg">
       {/* ------- Header du Chat / là où s'affiche le statut de Batman------- */}
+      {wordToGuess}
       <div className="flex flex-row justify-between items-center shadow bg-amber-500">
         <div className="flex ">
           <div className="flex ">
@@ -282,7 +297,7 @@ export default function Quizz({ alias, onFinished }) {
       </div>
       {/* ------- Body du Chat ------- */}
 
-      <div className="chat_body flex flex-col grow overflow-auto text-neutral-900 bg-neutral-900">
+      <div className="text-lg flex flex-col grow overflow-auto text-neutral-900 bg-neutral-900">
         <div className="p-2">
           {messageList.map((mess) => (
             <>
@@ -301,7 +316,8 @@ export default function Quizz({ alias, onFinished }) {
               )}
             </>
           ))}
-          <TypingAnimation face={batFace} isTyping={isTyping} />
+          <TypingAnimationLeft face={batFace} isTyping={isTypingLeft} />
+          <TypingAnimationRight isTyping={isTypingRight} />
         </div>
         {timerEnded && (
           <Link
@@ -330,7 +346,7 @@ export default function Quizz({ alias, onFinished }) {
                   type="text"
                   disabled={timerEnded}
                   placeholder="Aa"
-                  onChange={(e) => setUserMessage(e.target.value)}
+                  onChange={inputAction}
                   value={userMessage}
                   onSubmit={action}
                 />

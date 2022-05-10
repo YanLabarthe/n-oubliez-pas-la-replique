@@ -2,9 +2,12 @@
 export const randomWord = (quote) => {
   const regexpToDelete1 = /[,.!?:()"]/g;
   const regexpToDelete2 = /'/g;
+  const regexpToDelete3 =
+    /soit|peut|[mM]ais|pour|[Nn]ous|[Qq]uel|[Cc]ela|[cC]eci|[Qq]uoi|dont|leur|[oO]uais|[Dd]ans|cette|votre|être|plus|[Ee]st-ce|[Pp]arce|[Aa]vec|[hH]umm|fûmes|[Vv]ous|sont|êtes|suis/g;
 
   const words = quote
     .replaceAll(regexpToDelete1, "")
+    .replaceAll(regexpToDelete3, "")
     .replaceAll(regexpToDelete2, " ")
     .split(" ");
 

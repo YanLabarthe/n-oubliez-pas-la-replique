@@ -57,37 +57,41 @@ function MovieQuizz({ alias, onFinished }) {
   };
 
   return (
-    <>
-      <div className="m-0 flex flex-col h-screen w-full">
-        <img alt="batman" src={bulle} className="h-auto mx-auto w-1/4" />
-        {!timerEnded && (
-          <h3 className="bg-neutral-900  rounded-full p-4">
-            <Timer duration={30} onFinished={onGameEnd} />
-          </h3>
-        )}
-        <div>ALIAS: {alias}</div>
-        <div>SCORE: {score}</div>
-        <div>VIES: {lives}</div>
-
-        {/* ------- Body -- Quizz ------- */}
+    <div className="m-0 flex flex-col justify-between h-full">
+      <img alt="batman" src={bulle} className="h-auto py-2 mx-auto w-1/4" />
+      <div className="text-3xl flex flex-col sm:flex-row sm:justify-around">
+        <h3 className="py-3">ALIAS: {alias}</h3>
+        <h3 className="py-3">SCORE: {score}</h3>
+        <h3 className="py-3">VIES: {lives}</h3>
+      </div>
+      {/* ------- Body -- Quizz ------- */}
+      {lives && (
         <FourAnswersQuizz
-          className="grid grid-cols-2 mx-auto place-items-center"
+          className="w-1/2"
           question={question}
           timerEnded={timerEnded}
           answers={answers}
           correctTitle={correctTitle}
           onClick={onClick}
         />
-      </div>
-      {timerEnded && (
-        <Link
-          className={`py-3 mx-20 sm:py-5 sm:px-10 flex hover:text-neutral-900 justify-center sm:my-10 sm:w-13 sm:ml-60 sm:mr-60 hover:bg-amber-500 bg-neutral-900 text-amber-500 border-yellow-500 text-white-700 font border border-current hover:border-transparent rounded-full `}
-          to="/scoreboard"
-        >
-          <h3>Scoreboard</h3>
-        </Link>
       )}
-    </>
+      {!timerEnded && (
+        <h3 className="mx-auto my-3 bg-amber-400 text-neutral-900 rounded-full w-1/4 text-2xl">
+          <Timer duration={120} onFinished={onGameEnd} />
+        </h3>
+      )}
+      {!lives && (
+        <div className="flex flex-col items-center my-3">
+          <h3 className="text-3xl">Go check your rank you moron</h3>
+          <Link
+            className={`py-3 w-1/3 mx-auto sm:py-5 sm:px-10 flex hover:text-neutral-900 justify-center sm:my-10 sm:w-13 sm:ml-60 sm:mr-60 hover:bg-amber-400 bg-neutral-900 text-amber-400 border-yellow-400 font border border-current hover:border-transparent rounded-full `}
+            to="/scoreboard"
+          >
+            <h3>Scoreboard</h3>
+          </Link>
+        </div>
+      )}
+    </div>
   );
 }
 

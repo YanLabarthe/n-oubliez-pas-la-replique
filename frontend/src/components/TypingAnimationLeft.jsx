@@ -1,6 +1,6 @@
 import BatFace from "./BatFace";
 
-function TypingAnimation({ face, isTyping }) {
+function TypingAnimationLeft({ face, isTyping }) {
   return (
     isTyping && (
       <div className="flex flex-row justify-start my-3 w-full">
@@ -21,4 +21,4 @@ function TypingAnimation({ face, isTyping }) {
   );
 }
 
-export default TypingAnimation;
+export default TypingAnimationLeft;
