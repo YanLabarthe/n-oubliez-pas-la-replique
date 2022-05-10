@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL_API = "http://localhost:5000";
+const URL_API = "http://localhost:8080";
 
 export const getScores = async () => {
   return (await axios.get(`${URL_API}/scores`)).data;

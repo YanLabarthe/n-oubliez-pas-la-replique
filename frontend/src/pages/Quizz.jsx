@@ -220,7 +220,7 @@ export default function Quizz({ alias, onFinished }) {
       <div className="flex flex-row justify-between items-center shadow bg-amber-500">
         <div className="flex ">
           <div className="flex ">
-            <BatFace className="lg:h-26 " face={batFace} />
+            <BatFace className="lg:h-26" face={batFace} />
           </div>
           <div className="m-0 min-h-full text-sm ml-4 text-gray-900 flex flex-col justify-center ">
             <p className="font-bold pt-2 text-2xl flex justify-self-center sm:pt-0 sm:text-base">
@@ -242,7 +242,7 @@ export default function Quizz({ alias, onFinished }) {
               type="button"
               disabled={timerEnded}
               onClick={getTitleQuote}
-              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4"
+              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4 hover:animate-spin"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -272,7 +272,7 @@ export default function Quizz({ alias, onFinished }) {
               onClick={() => {
                 needHelp();
               }}
-              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4"
+              className="bg-black hover:bg-gray-900 text-yellow text-center py-2 px-4 rounded-full h-12 w-12 inline-flex items-center ml-4 hover:animate-spin"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
