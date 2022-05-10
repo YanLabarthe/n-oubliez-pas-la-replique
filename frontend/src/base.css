@@ -52,3 +52,11 @@
     background-color: #ffffff;
   }
 }
+
+.highlight {
+  background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=FBBF24);
+}
+
+.highlight:hover {
+  background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=000000);
+}
