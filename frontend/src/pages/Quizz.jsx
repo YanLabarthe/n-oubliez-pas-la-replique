@@ -35,11 +35,15 @@ export default function Quizz({ alias, onFinished }) {
   const [messageList, setMessageList] = useState([]);
 
   // set's the face of batman depending if the user answer is good or bad
-  const [batFace, setBatFace] = useState("");
+  const [batFace, setBatFace] = useState(batFaceImg.neutral);
 
   const [isTypingLeft, setIsTypingLeft] = useState(false);
 
   const [isTypingRight, setIsTypingRith] = useState(false);
+
+  const [winstreak, setWinstreak] = useState(0);
+
+  const [losestreak, setLosestreak] = useState(0);
 
   const endMessagesRef = useRef(null);
 
@@ -47,7 +51,6 @@ export default function Quizz({ alias, onFinished }) {
   useEffect(async () => {
     const newApi = await getQuotes();
     setApi(newApi);
-
     const newQuoteIndex = getRandomQuoteIndex(newApi.length);
     const firstWordToGuess = randomWord(newApi[newQuoteIndex].content);
 
@@ -59,8 +62,15 @@ export default function Quizz({ alias, onFinished }) {
     ]);
     setQuoteIndex(newQuoteIndex);
     setWordToGuess(firstWordToGuess);
-    setBatFace(batFaceImg.neutral);
   }, []);
+
+  useEffect(() => {
+    if (userMessage.length !== 0) {
+      setIsTypingRith(true);
+    } else {
+      setIsTypingRith(false);
+    }
+  }, [userMessage]);
 
   // Tracks the score value so we can transfer it from here to the App page (we didn't succeed to have the score value one the App page without that useEffect)
   useEffect(() => {
@@ -121,11 +131,6 @@ export default function Quizz({ alias, onFinished }) {
   };
 
   const inputAction = (e) => {
-    if (e.target.value !== "") {
-      setIsTypingRith(true);
-    } else {
-      setIsTypingRith(false);
-    }
     setUserMessage(e.target.value);
     endMessagesRef.current?.scrollIntoView();
   };
@@ -135,8 +140,6 @@ export default function Quizz({ alias, onFinished }) {
     event.preventDefault();
 
     if (userMessage !== "") {
-      let winstreak = 0;
-      let losestreak = 0;
       const userResponse = {
         name: "user",
         message: userMessage,
@@ -165,23 +168,23 @@ export default function Quizz({ alias, onFinished }) {
         setWordToGuess(newWordToGuess);
         setQuoteIndex(newQuoteIndex);
 
-        if (winstreak === 2) {
-          setBatFace(batFaceImg.happy);
-        }
-
-        winstreak += 1;
-        losestreak = 0;
+        setWinstreak(winstreak + 1);
+        setLosestreak(0);
 
         // case 2 : Wrong answer
       } else {
-        winstreak = 0;
-        losestreak += 1;
+        setWinstreak(0);
+        setLosestreak(losestreak + 1);
         batmanResponse.message = "you are a loser";
         batmanResponse.isCorrect = false;
+      }
 
-        if (losestreak === 2) {
-          setBatFace(batFaceImg.angry);
-        }
+      if (winstreak === 2) {
+        setBatFace(batFaceImg.happy);
+      }
+
+      if (losestreak === 2) {
+        setBatFace(batFaceImg.angry);
       }
 
       setMessageList([...messageList, userResponse]);
