@@ -9,6 +9,7 @@ import Timer from "@components/Timer";
 import { Link } from "react-router-dom";
 import getRandomQuoteIndex from "@services/randomQuoteIndex";
 import { getQuotes } from "@services/api";
+import TypingAnimation from "@components/TypingAnimation";
 
 export default function Quizz({ alias, onFinished }) {
   // contains all the quotes after import
@@ -34,6 +35,8 @@ export default function Quizz({ alias, onFinished }) {
 
   // set's the face of batman depending if the user answer is good or bad
   const [batFace, setBatFace] = useState(batFaceImg.neutral);
+
+  const [isTyping, setIsTyping] = useState(false);
 
   const endMessagesRef = useRef(null);
 
@@ -116,69 +119,83 @@ export default function Quizz({ alias, onFinished }) {
   // function launched after a answer is sent by the user
   const action = (event) => {
     event.preventDefault();
-    let winstreak = 0;
-    let losestreak = 0;
-    const userResponse = {
-      name: "user",
-      message: userMessage,
-      isCorrect: false,
-    };
 
-    const batmanResponse = {
-      name: "batman",
-      message: "",
-      isCorrect: true,
-    };
+    if (userMessage !== "") {
+      let winstreak = 0;
+      let losestreak = 0;
+      const userResponse = {
+        name: "user",
+        message: userMessage,
+        isCorrect: false,
+      };
 
-    const newQuoteIndex = getRandomQuoteIndex(api.length);
-    let newWordToGuess = wordToGuess;
-
-    const isGoodResponse =
-      userMessage.toLowerCase() === wordToGuess.toLowerCase();
-
-    // case 1 : Good answer
-    if (isGoodResponse) {
-      setScore(score + 10);
-      userResponse.isCorrect = true;
-      batmanResponse.isCorrect = true;
-      batmanResponse.message = "Good.";
-      newWordToGuess = randomWord(api[newQuoteIndex].content);
-      setWordToGuess(newWordToGuess);
-      setQuoteIndex(newQuoteIndex);
-
-      if (winstreak === 2) {
-        setBatFace(batFaceImg.happy);
-      }
-
-      winstreak += 1;
-      losestreak = 0;
-
-      // case 2 : Wrong answer
-    } else {
-      winstreak = 0;
-      losestreak += 1;
-      batmanResponse.message = "you are a loser";
-      batmanResponse.isCorrect = false;
-
-      if (losestreak === 2) {
-        setBatFace(batFaceImg.angry);
-      }
-    }
-
-    setMessageList([
-      ...messageList,
-      userResponse,
-      batmanResponse,
-      {
+      const batmanResponse = {
         name: "batman",
-        message: cryptedQuote(
-          api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
-          isGoodResponse ? newWordToGuess : wordToGuess
-        ),
-      },
-    ]);
+        message: "",
+        isCorrect: true,
+      };
 
-    setUserMessage("");
+      const newQuoteIndex = getRandomQuoteIndex(api.length);
+      let newWordToGuess = wordToGuess;
+
+      const isGoodResponse =
+        userMessage.toLowerCase() === wordToGuess.toLowerCase();
+
+      // case 1 : Good answer
+      if (isGoodResponse) {
+        setScore(score + 10);
+        userResponse.isCorrect = true;
+        batmanResponse.isCorrect = true;
+        batmanResponse.message = "Good.";
+        newWordToGuess = randomWord(api[newQuoteIndex].content);
+        setWordToGuess(newWordToGuess);
+        setQuoteIndex(newQuoteIndex);
+
+        if (winstreak === 2) {
+          setBatFace(batFaceImg.happy);
+        }
+
+        winstreak += 1;
+        losestreak = 0;
+
+        // case 2 : Wrong answer
+      } else {
+        winstreak = 0;
+        losestreak += 1;
+        batmanResponse.message = "you are a loser";
+        batmanResponse.isCorrect = false;
+
+        if (losestreak === 2) {
+          setBatFace(batFaceImg.angry);
+        }
+      }
+
+      setMessageList([...messageList, userResponse]);
+
+      setIsTyping(true);
+
+      setTimeout(() => {
+        setMessageList([...messageList, userResponse, batmanResponse]);
+      }, 1000);
+
+      setTimeout(() => {
+        setMessageList([
+          ...messageList,
+          userResponse,
+          batmanResponse,
+          {
+            name: "batman",
+            message: cryptedQuote(
+              api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
+              isGoodResponse ? newWordToGuess : wordToGuess
+            ),
+          },
+        ]);
+        setIsTyping(false);
+      }, 2500);
+
+      setUserMessage("");
+    }
   };
 
   // after the database of quotes is loaded
@@ -247,6 +264,7 @@ export default function Quizz({ alias, onFinished }) {
               )}
             </>
           ))}
+          <TypingAnimation face={batFace} isTyping={isTyping} />
         </div>
         {timerEnded && (
           <Link
@@ -256,6 +274,7 @@ export default function Quizz({ alias, onFinished }) {
             <h3>Scoreboard</h3>
           </Link>
         )}
+
         <div ref={endMessagesRef} />
       </div>
 
