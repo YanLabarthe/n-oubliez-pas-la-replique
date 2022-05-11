@@ -96,8 +96,12 @@ export default function Quizz({ alias, onFinished }) {
       {
         name: "batman",
         message: cryptedQuote(api[quoteIndex].title, wordToGuess),
+        face: batFaceImg.puzzled.src,
       },
     ]);
+    if (score < 0) {
+      setScore(score - 10);
+    }
   };
 
   // function that gives some letters in the word to guess
@@ -107,8 +111,12 @@ export default function Quizz({ alias, onFinished }) {
       {
         name: "batman",
         message: cryptedQuote(api[quoteIndex].content, wordToGuess, 1),
+        face: batFaceImg.puzzled.src,
       },
     ]);
+    if (score < 0) {
+      setScore(score - 10);
+    }
   };
 
   // function that gives the answer to the crypted quote and generate a new crypted quote
@@ -123,10 +131,12 @@ export default function Quizz({ alias, onFinished }) {
       {
         name: "batman",
         message: wordToGuess,
+        face: batFaceImg.puzzled.src,
       },
       {
         name: "batman",
         message: cryptedQuote(api[newQuoteIndex].content, newWordToGuess),
+        face: batFaceImg.puzzled.src,
       },
     ]);
   };
@@ -162,7 +172,7 @@ export default function Quizz({ alias, onFinished }) {
 
       // case 1 : Good answer
       if (isGoodResponse) {
-        setScore(score + 10);
+        setScore(score + 100);
         userResponse.isCorrect = true;
         batmanResponse.isCorrect = true;
         batmanResponse.message = "Good.";
@@ -181,13 +191,11 @@ export default function Quizz({ alias, onFinished }) {
         batmanResponse.message = "you are a loser";
         batmanResponse.isCorrect = false;
       }
-
-      if (winstreak === 2) {
+      if (winstreak <= 2) {
         setBatFace(batFaceImg.happy.src);
         batmanResponse.face = batFaceImg.happy.src;
       }
-
-      if (losestreak === 2) {
+      if (losestreak <= 2) {
         setBatFace(batFaceImg.angry.src);
         batmanResponse.face = batFaceImg.angry.src;
       }
