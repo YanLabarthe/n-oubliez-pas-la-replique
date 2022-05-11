@@ -65,7 +65,8 @@ function MovieQuizz({ alias, onFinished }) {
         <h3 className="py-3">VIES: {lives}</h3>
       </div>
       {/* ------- Body -- Quizz ------- */}
-      {lives && (
+
+      {!timerEnded && (
         <FourAnswersQuizz
           className="w-1/2"
           question={question}
@@ -75,11 +76,13 @@ function MovieQuizz({ alias, onFinished }) {
           onClick={onClick}
         />
       )}
+
       {!timerEnded && (
         <h3 className="mx-auto my-3 bg-amber-400 text-neutral-900 rounded-full w-1/4 text-2xl">
           <Timer duration={120} onFinished={onGameEnd} />
         </h3>
       )}
+
       {!lives && (
         <div className="flex flex-col items-center my-3">
           <h3 className="text-3xl">Go check your rank you moron</h3>
