@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Timer from "@components/Timer";
 import { getFourAnswers } from "@services/api";
 import FourAnswersQuizz from "@components/FourAnswersQuizz";
+import "../base.css";
 
 import bulle from "@assets/img/batman.png";
 
@@ -56,7 +57,7 @@ function MovieQuizz({ alias, onFinished }) {
   };
 
   return (
-    <div className="m-0 flex flex-col justify-between h-full">
+    <div className="m-0 flex flex-col justify-between h-full bg-neutral-900">
       <img alt="batman" src={bulle} className="h-auto py-2 mx-auto w-1/4" />
       <div className="text-3xl flex flex-col sm:flex-row sm:justify-around">
         <h3 className="py-3">ALIAS: {alias}</h3>

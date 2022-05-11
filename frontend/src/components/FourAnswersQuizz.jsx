@@ -3,7 +3,7 @@ import "../base.css";
 function FourAnswersQuizz({ question, answers, onClick, timerEnded }) {
   return (
     <>
-      <div className="m-8 flex flex-grow justify-center text-amber-400 items-center text-lg sm:text-3xl">
+      <div className="m-8 flex flex-grow justify-center text-amber-400 items-center text-lg sm:text-3xl border-t border-amber-400">
         <h1>{question}</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 justify-center items-center w-3/4 mx-auto my-2">

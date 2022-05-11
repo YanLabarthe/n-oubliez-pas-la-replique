@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-neutral-900;
+}
+
 .dot-flashing {
   position: relative;
   width: 10px;
