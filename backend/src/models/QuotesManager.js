@@ -5,7 +5,7 @@ class QuotesManager extends AbstractManager {
 
   findFour() {
     return this.connection.query(
-      `SELECT DISTINCT title, content FROM ${this.table} ORDER BY rand() LIMIT 4`
+      `SELECT DISTINCT title, content FROM ${QuotesManager.table} ORDER BY rand() LIMIT 4`
     );
   }
 }

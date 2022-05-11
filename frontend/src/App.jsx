@@ -5,13 +5,15 @@ import Scoreboard from "@pages/Scoreboard";
 import MovieQuizz from "@pages/MovieQuizz";
 import nameGenerator from "@services/nameGenerator";
 import { useState } from "react";
-import { addScore } from "@services/api";
+import { addScore, addScore2 } from "@services/api";
 import "../index.css";
+import ScoreboardMovieQuizz from "@pages/ScoreboardMovieQuizz";
 
 function App() {
   const [nameGenerated, setNameGenerated] = useState("");
   const [score, setScore] = useState(0);
   const [theRank, setTheRank] = useState("");
+  const [theRank2, setTheRank2] = useState("");
 
   const generateName = () => {
     const newName = nameGenerator();
@@ -21,7 +23,9 @@ function App() {
   const onGameEnd = async (theScore) => {
     setScore(theScore);
     const rank = await addScore(nameGenerated || "unknown", theScore);
+    const rank2 = await addScore2(nameGenerated || "unknown", theScore);
     setTheRank(rank[0].myrank);
+    setTheRank2(rank2[0].myrank);
   };
 
   return (
@@ -43,6 +47,16 @@ function App() {
           path="/scoreboard"
           element={
             <Scoreboard name={nameGenerated} score={score} rank={theRank} />
+          }
+        />
+        <Route
+          path="/scoreboardMovieQuizz"
+          element={
+            <ScoreboardMovieQuizz
+              name={nameGenerated}
+              score={score}
+              rank={theRank2}
+            />
           }
         />
       </Routes>

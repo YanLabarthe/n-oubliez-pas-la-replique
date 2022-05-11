@@ -16,19 +16,20 @@ function RandomAlias({ alias }) {
             {" "}
             Voyons si tu es à la hauteur !
           </p>
-
-          <Link
-            className="flex px-20 py-3 w-[30%] text-3xl justify-center hover:bg-yellow-500 text-white-700 font-semibold hover:text-neutral-900 border border-yellow-500 rounded"
-            to="/quizz"
-          >
-            Guess word
-          </Link>
-          <Link
-            className="flex px-20 py-3 w-[30%] text-3xl justify-center hover:bg-yellow-500 text-white-700 font-semibold hover:text-neutral-900 border border-yellow-500 rounded"
-            to="/moviequizz"
-          >
-            Guess title
-          </Link>
+          <div className="flex justify-around">
+            <Link
+              className="flex px-20 py-3 w-[30%] text-3xl justify-center hover:bg-yellow-500 text-white-700 font-semibold hover:text-neutral-900 border border-yellow-500 rounded"
+              to="/quizz"
+            >
+              Guess word
+            </Link>
+            <Link
+              className="flex px-20 py-3 w-[30%] text-3xl justify-center hover:bg-yellow-500 text-white-700 font-semibold hover:text-neutral-900 border border-yellow-500 rounded"
+              to="/moviequizz"
+            >
+              Guess title
+            </Link>
+          </div>
         </>
       )}
     </div>

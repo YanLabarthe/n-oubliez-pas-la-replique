@@ -16,6 +16,17 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
+CREATE TABLE `scoreTitleQuizz` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL DEFAULT "KNOWN",
+  `score` int,
+  PRIMARY KEY (`id`)
+) ;
+
+
+INSERT INTO `scoreTitleQuizz` VALUES (1,'Vincent',1000);
+
+
 --
 -- Table structure for table `scores`
 --
@@ -33,7 +44,7 @@ CREATE TABLE `scores` (
 
 
 --
--- Dumping data for table `quotes`
+-- Dumping data for table `scores`
 --
 
 LOCK TABLES `scores` WRITE;

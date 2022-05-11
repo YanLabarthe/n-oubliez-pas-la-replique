@@ -36,7 +36,6 @@ function MovieQuizz({ alias, onFinished }) {
 
   useEffect(() => {
     if (lives === 0) {
-      onFinished(score);
       setTimerEnded(true);
     }
   }, [lives]);
@@ -85,7 +84,7 @@ function MovieQuizz({ alias, onFinished }) {
           <h3 className="text-3xl">Go check your rank you moron</h3>
           <Link
             className={`py-3 w-1/3 mx-auto sm:py-5 sm:px-10 flex hover:text-neutral-900 justify-center sm:my-10 sm:w-13 sm:ml-60 sm:mr-60 hover:bg-amber-400 bg-neutral-900 text-amber-400 border-yellow-400 font border border-current hover:border-transparent rounded-full `}
-            to="/scoreboard"
+            to="/scoreboardMovieQuizz"
           >
             <h3>Scoreboard</h3>
           </Link>

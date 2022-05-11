@@ -5,21 +5,21 @@ class ScoresManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `SELECT * FROM  ${this.table}  ORDER BY score DESC LIMIT ?`,
+      `SELECT * FROM  ${ScoresManager.table}  ORDER BY score DESC LIMIT ?`,
       [10]
     );
   }
 
   insert(username, score) {
     return this.connection.query(
-      `INSERT INTO ${this.table} (username, score) VALUES (?, ?)`,
+      `INSERT INTO ${ScoresManager.table} (username, score) VALUES (?, ?)`,
       [username, score]
     );
   }
 
   findYourRank(scoreId) {
     return this.connection.query(
-      `SELECT myrank FROM (SELECT *, RANK() OVER(ORDER by score DESC) myrank FROM ${this.table}) as ranking WHERE id = ?`,
+      `SELECT myrank FROM (SELECT *, RANK() OVER(ORDER by score DESC) myrank FROM ${ScoresManager.table}) as ranking WHERE id = ?`,
       [scoreId]
     );
   }

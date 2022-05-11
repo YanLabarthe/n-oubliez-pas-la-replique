@@ -4,6 +4,7 @@ const {
   ItemController,
   QuotesController,
   ScoresController,
+  ScoresTitleController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -19,5 +20,8 @@ router.get("/quotes/findfour", QuotesController.findFour);
 
 router.get("/scores", ScoresController.browse);
 router.post("/scores", ScoresController.add);
+
+router.get("/scores2", ScoresTitleController.browse);
+router.post("/scores2", ScoresTitleController.add);
 
 module.exports = router;

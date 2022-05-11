@@ -17,3 +17,11 @@ export const getQuotes = async () => {
 export const getFourAnswers = async () => {
   return (await axios.get(`${URL_API}/quotes/findfour`)).data;
 };
+
+export const getScores2 = async () => {
+  return (await axios.get(`${URL_API}/scores2`)).data;
+};
+
+export const addScore2 = async (username, score) => {
+  return (await axios.post(`${URL_API}/scores2`, { username, score })).data;
+};
