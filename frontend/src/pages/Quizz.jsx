@@ -237,17 +237,18 @@ export default function Quizz({ alias, onFinished }) {
   return (
     <div className="m-0 flex flex-col h-screen w-full border-amber-100 overflow-hidden shadow-lg">
       {/* ------- Header du Chat / là où s'affiche le statut de Batman------- */}
-      {wordToGuess}
       <div className="flex flex-row justify-between items-center shadow bg-amber-500">
         <div className="flex ">
           <div className="flex ">
             <BatFace className="lg:h-26" face={batFace} />
           </div>
           <div className="m-0 min-h-full text-sm ml-4 text-gray-900 flex flex-col justify-center ">
-            <p className="font-bold pt-2 text-2xl flex justify-self-center sm:pt-0 sm:text-base">
+            <h3 className="font-bold pt-2 text-3xl flex justify-self-center sm:pt-0">
               Batman
-            </p>
-            <p className="hidden sm:flex ">Justicier et mauvais perdant</p>
+            </h3>
+            <h3 className="hidden sm:flex text-xl ">
+              Justicier et mauvais perdant
+            </h3>
           </div>
         </div>
 

@@ -3,7 +3,7 @@ export const randomWord = (quote) => {
   const regexpToDelete1 = /[,.!?:()"]/g;
   const regexpToDelete2 = /'/g;
   const regexpToDelete3 =
-    /soit|peut|[mM]ais|pour|[Nn]ous|[Qq]uel|[Cc]ela|[cC]eci|[Qq]uoi|dont|leur|[oO]uais|[Dd]ans|cette|votre|être|plus|[Ee]st-ce|[Pp]arce|[Aa]vec|[hH]umm|fûmes|[Vv]ous|sont|êtes|suis/g;
+    /soit|[Pp]eut|[mM]ais|pour|[Nn]ous|[Qq]uel|[Cc]ela|[cC]eci|[Qq]uoi|dont|leur|[oO]uais|[Dd]ans|cette|votre|être|plus|[Ee]st-ce|[Pp]arce|[Aa]vec|[hH]umm|fûmes|[Vv]ous|sont|êtes|suis/g;
 
   const words = quote
     .replaceAll(regexpToDelete1, "")
@@ -45,7 +45,7 @@ export const cryptedQuote = (quote, cryptedWord, binary) => {
         cryptage += " _";
       }
     }
-    return quote.replace(cryptedWord, cryptage);
+    return cryptage;
   } else {
     for (let i = 1; i < cryptedWord.length; i++) {
       cryptage += " _";
