@@ -43,12 +43,20 @@ function Scoreboard({ rank }) {
           ))}
         </div>
       </div>
-      <Link
-        className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black py-5 px-10 border border-current hover:border-transparent rounded flex justify-center my-10 w-13 ml-60 mr-60"
-        to="/quizz"
-      >
-        Play again
-      </Link>
+      <div className="flex justify-around text-center">
+        <Link
+          className="bg-transparent hover:bg-yellow-500 text-white-700 font hover:text-black px-20 border border-current hover:border-transparent rounded flex  my-8 w-10 ml-60 mr-60  flex justify-center"
+          to="/quizz"
+        >
+          Play again
+        </Link>
+        <Link
+          className="bg-transparent hover:bg-yellow-500 text-white-700  font hover:text-black  px-20 border border-current hover:border-transparent rounded flex  my-8 w-10 ml-60 mr-60 flex justify-center items-center"
+          to="/"
+        >
+          Home
+        </Link>
+      </div>
       <div />
     </div>
   );
