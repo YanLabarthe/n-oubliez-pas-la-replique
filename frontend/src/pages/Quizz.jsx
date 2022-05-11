@@ -126,19 +126,34 @@ export default function Quizz({ alias, onFinished }) {
     newWordToGuess = randomWord(api[newQuoteIndex].content);
     setWordToGuess(newWordToGuess);
     setQuoteIndex(newQuoteIndex);
-    setMessageList([
-      ...messageList,
-      {
-        name: "batman",
-        message: wordToGuess,
-        face: batFaceImg.puzzled.src,
-      },
-      {
-        name: "batman",
-        message: cryptedQuote(api[newQuoteIndex].content, newWordToGuess),
-        face: batFaceImg.puzzled.src,
-      },
-    ]);
+    setIsTypingLeft(true);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: wordToGuess,
+          face: batFaceImg.puzzled.src,
+        },
+      ]);
+    }, 1000);
+
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: wordToGuess,
+          face: batFaceImg.puzzled.src,
+        },
+        {
+          name: "batman",
+          message: cryptedQuote(api[newQuoteIndex].content, newWordToGuess),
+          face: batFaceImg.puzzled.src,
+        },
+      ]);
+      setIsTypingLeft(false);
+    }, 2000);
   };
 
   const inputAction = (e) => {
