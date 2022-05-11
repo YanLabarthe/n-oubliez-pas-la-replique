@@ -12,7 +12,7 @@ function MovieQuizz({ alias, onFinished }) {
   const [answers, setAnswers] = useState([]);
   const [question, setQuestion] = useState([]);
   const [correctTitle, setCorrectTitle] = useState("");
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(5);
 
   const generateAnswers = async () => {
     const fetchedAnswers = await getFourAnswers();
