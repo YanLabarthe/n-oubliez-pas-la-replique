@@ -35,7 +35,7 @@ export default function Quizz({ alias, onFinished }) {
   const [messageList, setMessageList] = useState([]);
 
   // set's the face of batman depending if the user answer is good or bad
-  const [batFace, setBatFace] = useState(batFaceImg.neutral);
+  const [batFace, setBatFace] = useState(batFaceImg.neutral.src);
 
   const [isTypingLeft, setIsTypingLeft] = useState(false);
 
@@ -58,6 +58,7 @@ export default function Quizz({ alias, onFinished }) {
       {
         name: "batman",
         message: cryptedQuote(newApi[newQuoteIndex].content, firstWordToGuess),
+        face: batFaceImg.neutral.src,
       },
     ]);
     setQuoteIndex(newQuoteIndex);
@@ -149,6 +150,7 @@ export default function Quizz({ alias, onFinished }) {
       const batmanResponse = {
         name: "batman",
         message: "",
+        face: batFaceImg.neutral.src,
         isCorrect: true,
       };
 
@@ -170,6 +172,7 @@ export default function Quizz({ alias, onFinished }) {
 
         setWinstreak(winstreak + 1);
         setLosestreak(0);
+        batmanResponse.face = batFaceImg.happy.src;
 
         // case 2 : Wrong answer
       } else {
@@ -180,11 +183,17 @@ export default function Quizz({ alias, onFinished }) {
       }
 
       if (winstreak === 2) {
-        setBatFace(batFaceImg.happy);
+        setBatFace(batFaceImg.happy.src);
+        batmanResponse.face = batFaceImg.happy.src;
       }
 
       if (losestreak === 2) {
-        setBatFace(batFaceImg.angry);
+        setBatFace(batFaceImg.angry.src);
+        batmanResponse.face = batFaceImg.angry.src;
+      }
+      if (losestreak !== 2 && winstreak !== 2) {
+        setBatFace(batFaceImg.neutral.src);
+        batmanResponse.face = batFaceImg.neutral.src;
       }
 
       setMessageList([...messageList, userResponse]);
@@ -206,6 +215,7 @@ export default function Quizz({ alias, onFinished }) {
               api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
               isGoodResponse ? newWordToGuess : wordToGuess
             ),
+            face: batmanResponse.face,
           },
         ]);
         setIsTypingLeft(false);
@@ -312,10 +322,7 @@ export default function Quizz({ alias, onFinished }) {
               )}
 
               {mess.name === "batman" && (
-                <BatmanAnswer
-                  answer={mess.message}
-                  face={mess.isCorrect ? batFaceImg.happy : batFaceImg.angry}
-                />
+                <BatmanAnswer answer={mess.message} face={mess.face} />
               )}
             </>
           ))}

@@ -1,7 +1,7 @@
 const batFaceImg = {
   neutral: {
     src: "https://i.ibb.co/VjpKVVM/bat-Neutre.png",
-    alt: "batman",
+    alt: "neutral batman",
   },
   angry: {
     src: "https://i.ibb.co/bHy6F8V/bat-Colere.png",
