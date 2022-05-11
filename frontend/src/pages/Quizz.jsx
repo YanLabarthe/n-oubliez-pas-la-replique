@@ -91,14 +91,37 @@ export default function Quizz({ alias, onFinished }) {
 
   // function that gives the title of the movie
   const getTitleQuote = () => {
-    setMessageList([
-      ...messageList,
-      {
-        name: "batman",
-        message: cryptedQuote(api[quoteIndex].title, wordToGuess),
-        face: batFaceImg.puzzled.src,
-      },
-    ]);
+    setIsTypingLeft(true);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: "You're so bad, it's so sad",
+          face: batFaceImg.disgusted.src,
+        },
+      ]);
+    }, 1000);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: "You're so bad, it's so sad",
+          face: batFaceImg.disgusted.src,
+        },
+        {
+          name: "batman",
+          message: `the title is : ${cryptedQuote(
+            api[quoteIndex].title,
+            wordToGuess
+          )}`,
+          face: batFaceImg.happy.src,
+        },
+      ]);
+      setIsTypingLeft(false);
+    }, 2500);
+
     if (score < 0) {
       setScore(score - 10);
     }
@@ -106,14 +129,33 @@ export default function Quizz({ alias, onFinished }) {
 
   // function that gives some letters in the word to guess
   const needHelp = () => {
-    setMessageList([
-      ...messageList,
-      {
-        name: "batman",
-        message: cryptedQuote(api[quoteIndex].content, wordToGuess, 1),
-        face: batFaceImg.puzzled.src,
-      },
-    ]);
+    setIsTypingLeft(true);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: "Oooooh, do you need some help ?",
+          face: batFaceImg.sad.src,
+        },
+      ]);
+    }, 1000);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message: "Oooooh, do you need some help ?",
+          face: batFaceImg.sad.src,
+        },
+        {
+          name: "batman",
+          message: cryptedQuote(api[quoteIndex].content, wordToGuess, 1),
+          face: batFaceImg.happy.src,
+        },
+      ]);
+      setIsTypingLeft(false);
+    }, 2500);
     if (score < 0) {
       setScore(score - 10);
     }
@@ -132,28 +174,50 @@ export default function Quizz({ alias, onFinished }) {
         ...messageList,
         {
           name: "batman",
-          message: wordToGuess,
-          face: batFaceImg.puzzled.src,
+          message:
+            "Really, you need the answer ?! Maybe you're not good enough after all.",
+          face: batFaceImg.hurt.src,
         },
       ]);
     }, 1000);
-
     setTimeout(() => {
       setMessageList([
         ...messageList,
         {
           name: "batman",
-          message: wordToGuess,
-          face: batFaceImg.puzzled.src,
+          message:
+            "Really, you need the answer ?! Maybe you're not good enough after all.",
+          face: batFaceImg.hurt.src,
+        },
+        {
+          name: "batman",
+          message: `La réponse était : ${wordToGuess}`,
+          face: batFaceImg.happy.src,
+        },
+      ]);
+    }, 2500);
+    setTimeout(() => {
+      setMessageList([
+        ...messageList,
+        {
+          name: "batman",
+          message:
+            "Really, you need the answer ? Maybe you're not good enough after all.",
+          face: batFaceImg.hurt.src,
+        },
+        {
+          name: "batman",
+          message: `La réponse était : ${wordToGuess}`,
+          face: batFaceImg.happy.src,
         },
         {
           name: "batman",
           message: cryptedQuote(api[newQuoteIndex].content, newWordToGuess),
-          face: batFaceImg.puzzled.src,
+          face: batFaceImg.neutral.src,
         },
       ]);
       setIsTypingLeft(false);
-    }, 2000);
+    }, 3500);
   };
 
   const inputAction = (e) => {
@@ -197,26 +261,25 @@ export default function Quizz({ alias, onFinished }) {
 
         setWinstreak(winstreak + 1);
         setLosestreak(0);
-        batmanResponse.face = batFaceImg.happy.src;
+        batmanResponse.message = "Hmmmm... Not bad.";
+        batmanResponse.face = batFaceImg.puzzled.src;
 
         // case 2 : Wrong answer
       } else {
         setWinstreak(0);
         setLosestreak(losestreak + 1);
-        batmanResponse.message = "you are a loser";
+        batmanResponse.message = "AHAH ! WROOONG !";
+        batmanResponse.face = batFaceImg.laughing.src;
         batmanResponse.isCorrect = false;
       }
-      if (winstreak <= 2) {
-        setBatFace(batFaceImg.happy.src);
-        batmanResponse.face = batFaceImg.happy.src;
-      }
-      if (losestreak <= 2) {
-        setBatFace(batFaceImg.angry.src);
-        batmanResponse.face = batFaceImg.angry.src;
-      }
-      if (losestreak !== 2 && winstreak !== 2) {
+      if (losestreak === winstreak) {
         setBatFace(batFaceImg.neutral.src);
-        batmanResponse.face = batFaceImg.neutral.src;
+      }
+      if (winstreak >= 2) {
+        setBatFace(batFaceImg.angry.src);
+      }
+      if (losestreak >= 2) {
+        setBatFace(batFaceImg.laughing.src);
       }
 
       setMessageList([...messageList, userResponse]);
@@ -238,7 +301,7 @@ export default function Quizz({ alias, onFinished }) {
               api[isGoodResponse ? newQuoteIndex : quoteIndex].content,
               isGoodResponse ? newWordToGuess : wordToGuess
             ),
-            face: batmanResponse.face,
+            face: batFaceImg.neutral.src,
           },
         ]);
         setIsTypingLeft(false);
